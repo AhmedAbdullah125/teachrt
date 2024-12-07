@@ -9,7 +9,7 @@ export default function SuggestedSubjects() {
         <div className="suggested-subjects">
             <div className="heading">
                 <h2>Suggested Subjects</h2>
-                <Link href={'#'}><LazyLoadImage src={view} className='view-img-d' alt='iTeacher'></LazyLoadImage> <span>View All</span></Link>
+                <Link to={'#'}><LazyLoadImage src={view} className='view-img-d' alt='iTeacher'></LazyLoadImage> <span>View All</span></Link>
             </div>
             <div className="sug-subs-cont">
                 <div className="sug">
@@ -24,7 +24,7 @@ export default function SuggestedSubjects() {
                     </div>
                     <div className="img-arrow">
                         <LazyLoadImage src={sub} alt='iTeacher' />
-                        <Link href={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
+                        <Link to={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
                     </div>
                 </div>
                 <div className="sug">
@@ -39,7 +39,7 @@ export default function SuggestedSubjects() {
                     </div>
                     <div className="img-arrow">
                         <LazyLoadImage src={sub} alt='iTeacher' />
-                        <Link href={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
+                        <Link to={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
                     </div>
                 </div>
                 <div className="sug">
@@ -54,7 +54,7 @@ export default function SuggestedSubjects() {
                     </div>
                     <div className="img-arrow">
                         <LazyLoadImage src={sub} alt='iTeacher' />
-                        <Link href={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
+                        <Link to={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
                     </div>
                 </div>
                 <div className="sug">
@@ -69,7 +69,7 @@ export default function SuggestedSubjects() {
                     </div>
                     <div className="img-arrow">
                         <LazyLoadImage src={sub} alt='iTeacher' />
-                        <Link href={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
+                        <Link to={'#'}> View Subject <i className="fa-solid fa-arrow-right-long"></i></Link>
                     </div>
                 </div>
             </div>

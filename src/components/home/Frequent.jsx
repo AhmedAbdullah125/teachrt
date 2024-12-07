@@ -20,7 +20,7 @@ export default function Frequent() {
             </div>
             <div className="heading">
                 <h3>The most frequently asked and searched subjects</h3>
-                <Link href={'#'}><LazyLoadImage src={view} className='view-img' alt='iTeacher'></LazyLoadImage> <span>View All</span></Link>
+                <Link to={'#'}><LazyLoadImage src={view} className='view-img' alt='iTeacher'></LazyLoadImage> <span>View All</span></Link>
             </div>
             <div className="freq-subs">
                 <div className="sub">
@@ -34,7 +34,7 @@ export default function Frequent() {
                         <span className='level'>First Level</span>
                         <span className='semester'>First Semester</span>
                     </div>
-                    <Link href={'#'} className='v-sub'>
+                    <Link to={'#'} className='v-sub'>
                         View Subject
                         <div className="arr">
                             <i className="fa-solid fa-arrow-right-long"></i>
@@ -53,7 +53,7 @@ export default function Frequent() {
                         <span className='level'>First Level</span>
                         <span className='semester'>First Semester</span>
                     </div>
-                    <Link href={'#'} className='v-sub'>
+                    <Link to={'#'} className='v-sub'>
                         <span>View Subject</span>
                         <div className="arr">
                             <i className="fa-solid fa-arrow-right-long"></i>
@@ -72,7 +72,7 @@ export default function Frequent() {
                         <span className='level'>First Level</span>
                         <span className='semester'>First Semester</span>
                     </div>
-                    <Link href={'#'} className='v-sub'>
+                    <Link to={'#'} className='v-sub'>
                         <span>View Subject</span>
                         <div className="arr">
                             <i className="fa-solid fa-arrow-right-long"></i>
