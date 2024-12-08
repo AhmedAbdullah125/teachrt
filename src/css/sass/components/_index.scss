@@ -808,7 +808,25 @@
     }
   }
 }
-
+.arnum{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .i-ccoonntt{
+    width: 34px;
+    height: 34px;
+    border: 1px solid $white;
+    fill: $white;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    i{
+      font-size: 10px;
+    }
+  }
+}
 .accordion-title {
   display: flex;
   align-items: center;

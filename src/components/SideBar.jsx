@@ -27,7 +27,7 @@ import {
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 export default function SideBar() {
     let accordionItems = [
-        { id: 1, title: 'Math Tiltle here', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: true }, { id: 2, title: 'Monday, 04 Jan 2024', isActive: false }, { id: 3, title: 'Monday, 05 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 05 Jan 2024', isActive: false }] },
+        { id: 1, title: 'Math Tiltle here', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: true }, { id: 3, title: 'Monday, 05 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 05 Jan 2024', isActive: false }] },
         { id: 2, title: 'Math Tiltle here2', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 2, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 3, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 03 Jan 2024', isActive: false }] },
         { id: 3, title: 'Math Tiltle here3', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 2, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 3, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 03 Jan 2024', isActive: false }] },
     ];
@@ -86,15 +86,22 @@ export default function SideBar() {
                             <div value={item.id} className='accordion-item' key={index}>
                                 <div className="accordion-title"
                                     onClick={() => {
-                                        if (opened==item.id) {
+                                        if (opened == item.id) {
                                             setOpened(0)
                                         }
                                         else {
                                             setOpened(item.id)
                                         }
                                     }}
-                                ><h2>{item.title}</h2> <span className='num-back'>20</span></div>
-                                <div className="accordion-options-cont"  style={opened === item.id ? { height: 'auto',opacity: 1,visibility: 'visible' } : { height: '0',opacity: 0,visibility: 'hidden'}}>
+                                ><h2>{item.title}</h2>
+                                    <div className="arnum">
+                                        <span className='num-back'>{item.data.length}</span>
+                                        <div className="i-ccoonntt">
+                                            <i className="fa-solid fa-chevron-down" style={opened === item.id ? { transform: 'rotate(180deg)' } : { transform: 'rotate(0deg)' }}></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="accordion-options-cont" style={opened === item.id ? { height: 'auto', opacity: 1, visibility: 'visible' } : { height: '0', opacity: 0, visibility: 'hidden' }}>
                                     {
                                         item.data.map((subItem) =>
                                             <div key={subItem.id}>
