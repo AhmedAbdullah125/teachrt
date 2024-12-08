@@ -233,7 +233,8 @@ header {
   inset-inline-end: -10px;
   z-index: -1;
 }
-.profile-cont .dropp {
+
+.dropp {
   padding: 6px 0;
   background-color: white;
   border-radius: 12px;
@@ -242,18 +243,18 @@ header {
   z-index: 20;
   inset-inline-end: 77px;
 }
-.profile-cont .dropp a {
+.dropp a {
   padding: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
   border-bottom: 1px solid #ECECEC;
 }
-.profile-cont .dropp a:hover {
+.dropp a:hover {
   background-color: #ECECEC;
   border-radius: 12px;
 }
-.profile-cont .dropp img {
+.dropp img {
   width: 18px;
   height: 18px;
   flex-shrink: 0;

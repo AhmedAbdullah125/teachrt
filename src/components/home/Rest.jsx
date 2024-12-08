@@ -14,6 +14,8 @@ import NumberTicker from '../ui/number-ticker';
 // import React from 'react';
 import { motion } from 'framer-motion';
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default function Rest() {
@@ -24,13 +26,14 @@ export default function Rest() {
         { id: 4, text: "First Level 4" },
         { id: 5, text: "First Level 5" },
         { id: 6, text: "First Level 9" },
-        { id: 1, text: "First Level 1" },
-        { id: 2, text: "First Level 2" },
-        { id: 3, text: "First Level 3" },
-        { id: 4, text: "First Level 4" },
-        { id: 5, text: "First Level 5" },
-        { id: 6, text: "First Level 9" },
+        { id: 7, text: "First Level 1" },
+        { id: 8, text: "First Level 2" },
+        { id: 9, text: "First Level 3" },
+        { id: 10, text: "First Level 4" },
+        { id: 11, text: "First Level 5" },
+        { id: 12, text: "First Level 9" },
     ]
+    let [open, setOpen] = useState(0)
     return (
         <div className="rest">
             <h2>Conversation <span>AI Solutions</span> Infinite Possibilities 💪🏻</h2>
@@ -81,8 +84,8 @@ export default function Rest() {
                                         <LazyLoadImage className='dots' src={dots} alt="iTeacher" />
                                     </div>
                                     <motion.div
-                                        initial={{  insetInlineStart: 0 }}
-                                        whileInView={{  insetInlineStart: "50%" }}
+                                        initial={{ insetInlineStart: 0 }}
+                                        whileInView={{ insetInlineStart: "50%" }}
                                         viewport={{ once: true }}
                                         transition={{
                                             type: 'linear',
@@ -104,7 +107,20 @@ export default function Rest() {
                                         viewport={{ once: true }}
                                         className="tring">
                                         <h5>{item.text}</h5>
-                                        <LazyLoadImage src={arrowDown} alt="iTeacher" />
+                                        <div className="relative">
+                                            <LazyLoadImage src={arrowDown} alt="iTeacher" onClick={() => {
+                                                if (open === item.id) {
+                                                    setOpen(0)
+                                                } else {
+                                                    setOpen(item.id)
+                                                }
+                                                }}/>
+                                            <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
+                                                <div className="arrow-after" ></div>
+                                                <Link to={'/login'} className=""><span>setting</span></Link>
+                                                <Link to={'/newpass'} className=""><span>My Plan</span></Link>
+                                            </div>
+                                        </div>
                                     </motion.div>
                                 </div>
                             )
