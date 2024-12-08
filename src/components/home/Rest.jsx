@@ -114,14 +114,14 @@ export default function Rest() {
                                                 } else {
                                                     setOpen(item.id)
                                                 }
-                                                }}/>
-                                            <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
-                                                <div className="arrow-after" ></div>
-                                                <Link to={'/chat'} className=""><span>setting</span></Link>
-                                                <Link to={'/newpass'} className=""><span>My Plan</span></Link>
-                                            </div>
+                                            }} />
                                         </div>
                                     </motion.div>
+                                    <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
+                                        <div className="arrow-after" ></div>
+                                        <Link to={'/chat'} className=""><span>chat</span></Link>
+                                        <Link to={'/login'} className=""><span>Login</span></Link>
+                                    </div>
                                 </div>
                             )
                         }

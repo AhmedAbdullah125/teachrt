@@ -347,6 +347,7 @@
           z-index: 2;
           // width: 100%;
           aspect-ratio: 685/153;
+          z-index: 1;
 
           // inset-inline-start: -30px;
         }
@@ -371,6 +372,7 @@
         .relative {
           margin-inline-start: -20%;
           height: 100%;
+          z-index: 2;
         }
 
         .dotted-star {

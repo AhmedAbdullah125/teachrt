@@ -260,6 +260,39 @@ header {
   flex-shrink: 0;
 }
 
+.trings-cont .dropp {
+  top: calc(50% - 19px);
+  inset-inline-end: 90px;
+  z-index: 300;
+}
+.trings-cont .arrow-after {
+  top: 18px;
+  bottom: unset;
+  inset-inline-end: -10px;
+  z-index: -1;
+  /* transform: rotate(180deg);*/
+}
+
+.rates-imgs img {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.main-select {
+  z-index: 20;
+  cursor: pointer;
+}
+.main-select .dropp {
+  top: 0px;
+  inset-inline-start: calc(100% + 18px);
+  z-index: 50;
+}
+.main-select .arrow-after {
+  top: 27px;
+  inset-inline-start: -16px;
+  transform: rotate(90deg);
+}
+
 .header-cont {
   display: flex;
   align-items: center;
@@ -652,6 +685,7 @@ header {
   inset-inline-start: -8px;
   z-index: 2;
   aspect-ratio: 685/153;
+  z-index: 1;
 }
 .main-home .main-content .help-steps .trings-cont .tring {
   display: flex;
@@ -673,6 +707,7 @@ header {
 .main-home .main-content .help-steps .trings-cont .relative {
   margin-inline-start: -20%;
   height: 100%;
+  z-index: 2;
 }
 .main-home .main-content .help-steps .trings-cont .dotted-star {
   position: absolute;
