@@ -1,6 +1,6 @@
 'use client'
 // import Image from 'next/image';
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import teatcher from '/public/teacher.svg'
 import starImg from '/public/star.svg'
 import cloud from '/public/cloud2.svg'
@@ -31,6 +31,11 @@ export default function SideBar() {
         { id: 2, title: 'Math Tiltle here2', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 2, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 3, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 03 Jan 2024', isActive: false }] },
         { id: 3, title: 'Math Tiltle here3', data: [{ id: 1, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 2, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 3, title: 'Monday, 03 Jan 2024', isActive: false }, { id: 4, title: 'Monday, 03 Jan 2024', isActive: false }] },
     ];
+    let options = [
+        { id: 1, title: 'What is multiplication' },
+        { id: 2, title: 'Addition of two numbers' },
+        { id: 3, title: 'Addition of three numbers' },
+    ]
     let width = screen.width;
     console.log(width);
 
@@ -41,6 +46,8 @@ export default function SideBar() {
     useEffect(() => {
         window.innerWidth < 1024 ? setOpen(true) : setOpen(false)
     }, [])
+
+    let [opened, setOpened] = useState(0);
     return (
         <div className={`side-bar ${open ? 'side-bar-mini' : ''}`} id='side-bar'>
             <div className="arrows">
@@ -73,94 +80,64 @@ export default function SideBar() {
                     <div className="w-4 h-4 bg-white/20 absolute bottom-4 start-[40%] rounded-full "></div>
                     <LazyLoadImage src={cloud} alt='iTeacher' className='cloud' />
                 </div>
-                <Accordion type="single" collapsible className="w-full accordion">
+                <div collapsible className="w-full accordion">
                     {
                         accordionItems.map((item, index) =>
-                            <AccordionItem value={item.id} className='accordion-item' key={index}>
-                                <AccordionTrigger><div className="accordion-title"><h2>{item.title}</h2> <span  className='num-back'>20</span></div></AccordionTrigger>
-                                {
-                                    item.data.map((subItem) =>
-                                        <AccordionContent key={subItem.id}>
-                                            <div className="accordion-conttent-data">
-                                                <h4><i className="fa-regular fa-calendar-days"></i>{subItem.title}</h4>
-                                                <div className="options">
-                                                    <div className="option">
-                                                        <div className="bullet"></div>
-                                                        <h5>What is multiplication</h5>
-                                                        <DropdownMenu>
-                                                            <DropdownMenuTrigger asChild>
-                                                                <i className="fa-solid fa-ellipsis"></i>
-                                                            </DropdownMenuTrigger>
-                                                            <DropdownMenuContent className="w-56 drop-side rounded-xl p-4 ps-7 top-0 lg:left-12 right-12 arrow-smm " >
-                                                                <div className="arrow-after rounded-2xl top-4 lg:-start-4 -end-4 lg:rotate-90"></div>
-                                                                <DropdownMenuGroup>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Share
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={ghoz} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Rename
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={pen} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#FF3B30] text-[#FF3B30] bg-red px-6 py-2'>Delete
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={asteca} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                </DropdownMenuGroup>
-                                                            </DropdownMenuContent>
-                                                        </DropdownMenu>
-                                                    </div>
-                                                    <div className={`option ${subItem.isActive ? 'active-option' : ''}`}>
-                                                        <div className="bullet"></div>
-                                                        <h5>Addition of two numbers</h5>
-                                                        <DropdownMenu>
-                                                            <DropdownMenuTrigger asChild>
-                                                                <i className="fa-solid fa-ellipsis"></i>
-                                                            </DropdownMenuTrigger>
-                                                            <DropdownMenuContent className="w-56 drop-side rounded-xl p-4 ps-7 top-0 lg:left-12 right-12 arrow-smm " >                                                                <div className="arrow-after rounded-2xl top-4 lg:-start-4 -end-4 lg:rotate-90"></div>
-                                                                <DropdownMenuGroup>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Share
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={ghoz} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Rename
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={pen} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#FF3B30] text-[#FF3B30] bg-red px-6 py-2'>Delete
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={asteca} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                </DropdownMenuGroup>
-                                                            </DropdownMenuContent>
-                                                        </DropdownMenu>
-                                                    </div>
-                                                    <div className="option">
-                                                        <div className="bullet"></div>
-                                                        <h5>Long division steps</h5>
-                                                        <DropdownMenu>
-                                                            <DropdownMenuTrigger asChild>
-                                                                <i className="fa-solid fa-ellipsis"></i>
-                                                            </DropdownMenuTrigger>
-                                                            <DropdownMenuContent className="w-56 drop-side rounded-xl p-4 ps-7 top-0 lg:left-12 right-12 arrow-smm " >                                                            <div className="arrow-after rounded-2xl top-4 lg:-start-4 -end-4 lg:rotate-90"></div>
-                                                                <DropdownMenuGroup>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Share
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={ghoz} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Rename
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={pen} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                    <DropdownMenuItem className='rounded-[60px] border border-[#FF3B30] text-[#FF3B30] bg-red px-6 py-2'>Delete
-                                                                        <DropdownMenuShortcut><LazyLoadImage src={asteca} alt='iTeacher' /></DropdownMenuShortcut>
-                                                                    </DropdownMenuItem>
-                                                                </DropdownMenuGroup>
-                                                            </DropdownMenuContent>
-                                                        </DropdownMenu>
+                            <div value={item.id} className='accordion-item' key={index}>
+                                <div className="accordion-title"
+                                    onClick={() => {
+                                        if (opened==item.id) {
+                                            setOpened(0)
+                                        }
+                                        else {
+                                            setOpened(item.id)
+                                        }
+                                    }}
+                                ><h2>{item.title}</h2> <span className='num-back'>20</span></div>
+                                <div className="accordion-options-cont"  style={opened === item.id ? { height: 'auto',opacity: 1,visibility: 'visible' } : { height: '0',opacity: 0,visibility: 'hidden'}}>
+                                    {
+                                        item.data.map((subItem) =>
+                                            <div key={subItem.id}>
+                                                <div className="accordion-conttent-data" >
+                                                    <h4><i className="fa-regular fa-calendar-days"></i>{subItem.title}</h4>
+                                                    <div className="options">
+                                                        {
+                                                            options.map((option) =>
+                                                                <div className={`option ${subItem.isActive ? 'active-option' : ''}`}>
+                                                                    <div className="bullet"></div>
+                                                                    <h5>{option.title}</h5>
+                                                                    <DropdownMenu>
+                                                                        <DropdownMenuTrigger asChild>
+                                                                            <i className="fa-solid fa-ellipsis"></i>
+                                                                        </DropdownMenuTrigger>
+                                                                        <DropdownMenuContent className="w-56 drop-side rounded-xl p-4 ps-7 top-0 lg:left-12 right-12 arrow-smm " >                                                                <div className="arrow-after rounded-2xl top-4 lg:-start-4 -end-4 lg:rotate-90"></div>
+                                                                            <DropdownMenuGroup>
+                                                                                <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Share
+                                                                                    <DropdownMenuShortcut><LazyLoadImage src={ghoz} alt='iTeacher' /></DropdownMenuShortcut>
+                                                                                </DropdownMenuItem>
+                                                                                <DropdownMenuItem className='rounded-[60px] border border-[#EAEAEC] bg-red px-6 py-2 mb-3'>Rename
+                                                                                    <DropdownMenuShortcut><LazyLoadImage src={pen} alt='iTeacher' /></DropdownMenuShortcut>
+                                                                                </DropdownMenuItem>
+                                                                                <DropdownMenuItem className='rounded-[60px] border border-[#FF3B30] text-[#FF3B30] bg-red px-6 py-2'>Delete
+                                                                                    <DropdownMenuShortcut><LazyLoadImage src={asteca} alt='iTeacher' /></DropdownMenuShortcut>
+                                                                                </DropdownMenuItem>
+                                                                            </DropdownMenuGroup>
+                                                                        </DropdownMenuContent>
+                                                                    </DropdownMenu>
+                                                                </div>
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
-                                        </AccordionContent>
-                                    )
-                                }
+                                        )
+                                    }
+                                </div>
 
-                            </AccordionItem>
+                            </div>
                         )
                     }
-                </Accordion>
+                </div>
             </div>
         </div>
     );
