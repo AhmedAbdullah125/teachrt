@@ -45,12 +45,14 @@ export default function Header() {
               <LazyLoadImage src={logo} alt="image" />
               <span>GreenWood International School</span>
             </div>
-            <div className="main-logo main-select relative">
-              <p onClick={handleOpenTeacher}>iteacher 4o <i className="fa-solid fa-caret-down" style={openTeacher ? { transform: "rotate(180deg)" } : {}}></i></p>
+            <div className="main-logo main-select relative" onClick={handleOpenTeacher}>
+              <p >iteacher 4o <i className="fa-solid fa-caret-down" style={openTeacher ? { transform: "rotate(180deg)" } : {}}></i></p>
               <div className="dropp absolute " style={openTeacher ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
                 <div className="arrow-after" ></div>
-                <Link to={'/login'} className=""><LazyLoadImage src={ters} alt='iTeacher' /><span>setting</span></Link>
-                <Link to={'/newpass'} className=""><LazyLoadImage src={plan} alt='iTeacher' /><span>My Plan</span></Link>
+                <Link to={'/login'} className=""><span>iTeacher 4o</span></Link>
+                <Link to={'/newpass'} className=""><span>iTeacher 4</span></Link>
+                <Link to={'/newpass'} className=""><span>iTeacher 3</span></Link>
+                <Link to={'/newpass'} className=""><span>iTeacher 2</span></Link>
               </div>
             </div>
           </div>
