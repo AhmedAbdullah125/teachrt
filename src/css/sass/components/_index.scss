@@ -24,6 +24,7 @@
 .car-cont-2{
   display: none;
 }
+
 .main-home {
   position: relative;
   display: flex;
@@ -385,7 +386,7 @@
         }
       }
 
-      .trings-cont .relative:nth-child(1) {
+      .trings-cont .relative:nth-child(1),.trings-cont .relative:nth-child(7) {
         margin-inline-start: 0;
 
         .tring {
@@ -396,14 +397,14 @@
         }
       }
 
-      .trings-cont .relative:nth-child(2) {
+      .trings-cont .relative:nth-child(2) ,.trings-cont .relative:nth-child(8){
         .tring {
           background: rgb(0, 98, 168);
           background: linear-gradient(0deg, rgba(234, 158, 23, 1) 50%, rgba(254, 178, 43, 1) 50%);
         }
       }
 
-      .trings-cont .relative:nth-child(3) {
+      .trings-cont .relative:nth-child(3) ,.trings-cont .relative:nth-child(9){
         .tring {
           background: rgb(0, 98, 168);
           background: linear-gradient(0deg, rgba(232, 91, 24, 1) 50%, rgba(242, 101, 34, 1) 50%);
@@ -415,8 +416,14 @@
           }
         }
       }
-
-      .trings-cont .relative:nth-child(4) {
+      .trings-cont .relative:nth-child(9){
+        .dotted-star {
+          .dots {
+            display: block;
+          }
+        }
+      }
+      .trings-cont .relative:nth-child(4),.trings-cont .relative:nth-child(10) {
         margin-inline-start: 0;
 
         .tring {
@@ -426,7 +433,7 @@
         }
       }
 
-      .trings-cont .relative:nth-child(5) {
+      .trings-cont .relative:nth-child(5) ,.trings-cont .relative:nth-child(11){
         .tring {
           background: rgb(0, 98, 168);
           background: linear-gradient(0deg, rgba(3, 161, 213, 1) 50%, rgba(23, 181, 233, 1)50%);
@@ -434,7 +441,7 @@
         
       }
 
-      .trings-cont .relative:nth-child(6) {
+      .trings-cont .relative:nth-child(6) ,.trings-cont .relative:nth-child(12){
         // .car-cont-2{
         //   display: block;
         // }
