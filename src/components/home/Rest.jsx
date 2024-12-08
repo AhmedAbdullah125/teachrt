@@ -117,7 +117,7 @@ export default function Rest() {
                                                 }}/>
                                             <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
                                                 <div className="arrow-after" ></div>
-                                                <Link to={'/login'} className=""><span>setting</span></Link>
+                                                <Link to={'/chat'} className=""><span>setting</span></Link>
                                                 <Link to={'/newpass'} className=""><span>My Plan</span></Link>
                                             </div>
                                         </div>
