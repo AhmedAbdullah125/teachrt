@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 export default function Header() {
   // const [position, setPosition] = useState("bottom")
   return (
@@ -39,7 +40,7 @@ export default function Header() {
               </Select>
             </div>
           </div>
-          <div className="user-name">SH</div>
+          <Link to={'/login'}   className="user-name">SH</Link>
         </div>
       </div>
     </header>
