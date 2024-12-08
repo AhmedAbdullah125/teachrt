@@ -337,6 +337,10 @@ header {
   background-position: center;
 }
 
+.car-cont-2 {
+  display: none;
+}
+
 .main-home {
   position: relative;
   display: flex;
@@ -675,12 +679,15 @@ header {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(3, 161, 213) 50%, rgb(23, 181, 233) 50%);
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(6) .dotted-star {
-  display: none;
-}
 .main-home .main-content .help-steps .trings-cont .relative:nth-child(6) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(18, 67, 147) 50%, rgb(38, 87, 167) 50%);
+}
+.main-home .main-content .help-steps .trings-cont .relative:nth-last-child(2) .dotted-star {
+  display: none;
+}
+.main-home .main-content .help-steps .trings-cont .relative:nth-last-child(2) .car-cont-2 {
+  display: block;
 }
 .main-home .main-content .help-steps .form-cont {
   width: 100%;
@@ -1063,7 +1070,7 @@ header {
 }
 
 .accordion-item {
-  padding: 20px 14px 5px;
+  padding: 20px 14px;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   border: none;

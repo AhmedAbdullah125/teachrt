@@ -21,6 +21,9 @@
   background-position: center;
 
 }
+.car-cont-2{
+  display: none;
+}
 .main-home {
   position: relative;
   display: flex;
@@ -428,19 +431,27 @@
           background: rgb(0, 98, 168);
           background: linear-gradient(0deg, rgba(3, 161, 213, 1) 50%, rgba(23, 181, 233, 1)50%);
         }
+        
       }
 
       .trings-cont .relative:nth-child(6) {
-        .dotted-star {
-          display: none;
-          
-        }
+        // .car-cont-2{
+        //   display: block;
+        // }
         .tring {
 
           background: rgb(0, 98, 168);
           background: linear-gradient(0deg, rgba(18, 67, 147, 1) 50%, rgba(38, 87, 167, 1) 50%);
         }
         
+      }
+      .trings-cont .relative:nth-last-child(2) {
+        .dotted-star {
+          display: none;
+        }
+        .car-cont-2{
+          display: block;
+        }
       }
 
       .form-cont {
@@ -868,9 +879,22 @@
     border-radius: 12px;
   }
 }
-
+// .parent-div-options{
+//   *:hover{
+//     color: $white;
+//     background-color: $hover;
+//   }
+// }
+// a:hover{
+// background-color: $hover;
+// color: $white;
+// }
+// button:hover{
+//   background-color: $hover;
+//   color: $white;
+//   }
 .accordion-item {
-  padding: 20px 14px 5px;
+  padding: 20px 14px;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   border: none;

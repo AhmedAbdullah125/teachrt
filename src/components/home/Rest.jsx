@@ -68,20 +68,24 @@ export default function Rest() {
 
                         {
                             relatives.map((item, index) =>
-                                <div
-                                    className="relative" key={item.id}>
-                                    <motion.div
-                                        initial={{ opacity: 0, y: -100 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            type: 'spring',
-                                            bounce: 0.2,
-                                            duration: index * .1,
-                                        }}
-                                        viewport={{ once: true }}
+                                <div className="relative" key={item.id}>
+                                    <div
                                         className="dotted-star">
                                         <LazyLoadImage className='star' src={tringStar} alt="iTeacher" />
                                         <LazyLoadImage className='dots' src={dots} alt="iTeacher" />
+                                    </div>
+                                    <motion.div
+                                        initial={{  insetInlineStart: 0 }}
+                                        whileInView={{  insetInlineStart: "50%" }}
+                                        viewport={{ once: true }}
+                                        transition={{
+                                            type: 'linear',
+                                            bounce: 0,
+                                            duration: 5,
+                                            delay: 0
+                                        }}
+                                        className="car-cont-2">
+                                        <LazyLoadImage src={car} alt="iTeacher" />
                                     </motion.div>
                                     <motion.div
                                         initial={{ opacity: 0, x: -100 }}
@@ -100,8 +104,8 @@ export default function Rest() {
                             )
                         }
 
-                        <LazyLoadImage className='tall-dotsmm' src={tallDots} alt="iTeacher" />
-                        <motion.div
+                        <LazyLoadImage className='tall-dotsmm' style={relatives.length > 3 ? { display: 'block' } : { display: 'none' }} src={tallDots} alt="iTeacher" />
+                        {/* <motion.div
                             initial={{ insetInlineStart: 0 }}
                             whileInView={{ insetInlineStart: "100%" }}
                             viewport={{ once: true }}
@@ -114,8 +118,8 @@ export default function Rest() {
                             <LazyLoadImage src={car} alt="iTeacher" />
                         </motion.div>
                         <motion.div
-                            initial={{opacity: 0, insetInlineStart: 0 }}
-                            whileInView={{opacity: 1, insetInlineStart: "66%" }}
+                            initial={{ opacity: 0, insetInlineStart: 0 }}
+                            whileInView={{ opacity: 1, insetInlineStart: "66%" }}
                             viewport={{ once: true }}
                             transition={{
                                 type: 'linear',
@@ -125,7 +129,7 @@ export default function Rest() {
                             }}
                             className="car-cont-2">
                             <LazyLoadImage src={car} alt="iTeacher" />
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                     <form className="form-cont">
                         <input type="text" placeholder='Write your question here...'></input>

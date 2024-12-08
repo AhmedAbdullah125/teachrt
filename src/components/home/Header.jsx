@@ -29,12 +29,12 @@ export default function Header() {
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Select Teacher" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel className="bg-transparent">iteacher 4o</SelectLabel>
-                    <SelectItem value="iteacher4o">iteacher 4o</SelectItem>
-                    <SelectItem value="iteacher4">iteacher 4</SelectItem>
-                    <SelectItem value="iteacher3">iteacher 3</SelectItem>
+                <SelectContent className="bg-white rounded-xl">
+                  <SelectGroup className="">
+                    <SelectLabel className="bg-transparent mb-2">iteacher 4o</SelectLabel>
+                    <SelectItem value="iteacher4o" className="mb-2 border rounded-xl hover:bg-slate-500 border-[#EAEAEC]">iteacher 4o</SelectItem>
+                    <SelectItem value="iteacher4" className="mb-2 border rounded-xl hover:bg-slate-500 border-[#EAEAEC]">iteacher 4</SelectItem>
+                    <SelectItem value="iteacher3" className="mb-2 border rounded-xl hover:bg-slate-500 border-[#EAEAEC]">iteacher 3</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
