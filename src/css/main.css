@@ -227,6 +227,9 @@ header {
   background-color: rgba(0, 0, 0, 0.01);
 }
 
+.profile-cont {
+  cursor: pointer;
+}
 .profile-cont .arrow-after {
   position: absolute;
   top: 12px;
@@ -394,6 +397,10 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.overflow-visible {
+  overflow: visible !important;
 }
 
 .bodyCont:has(.llogin) {
