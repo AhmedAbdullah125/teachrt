@@ -50,8 +50,8 @@ export default function Header() {
               <div className="dropp absolute " style={openTeacher ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
                 <div className="arrow-after" ></div>
                 <Link to={'/login'} className=""><span>iTeacher 4o</span></Link>
-                <Link to={'/newpass'} className=""><span>iTeacher 4</span></Link>
-                <Link to={'/newpass'} className=""><span>iTeacher 3</span></Link>
+                <Link to={'/chat'} className=""><span>Chatbot</span></Link>
+                <Link to={'/mail'} className=""><span>iTeacher 3</span></Link>
                 <Link to={'/newpass'} className=""><span>iTeacher 2</span></Link>
               </div>
             </div>
