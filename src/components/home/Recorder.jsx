@@ -118,13 +118,8 @@ const RecordView = (props) => {
             </h3> */}
 
             <div>
-            <label htmlFor="record" className="custom-file-upload2"  style={isActive ? { display: "none" }: { display: "block" }}>
-            </label>
-              <button
-                id="record"
-                style={{
-                    display: "none",
-                }}
+            <label htmlFor="record" className="custom-file-upload2"  style={isActive ? { display: "none" }: { display: "block" }}
+              
                 onClick={() => {
                   if (!isActive) {
                     startRecording();
@@ -134,16 +129,14 @@ const RecordView = (props) => {
                   setIsStoped(false)
                   setIsActive(!isActive);
                 }}
-              >
-                {isActive ? "Pause" : "Start"}
-              </button>
-              <label htmlFor="stop" className="custom-file-upload3"  style={!isActive ? { display: "none" }: { display: "block" }}>
-              </label>
-              <button
-                id="stop"
+                >
+    
+              {/* </button> */}
+                </label>
+              <label htmlFor="stop" className="custom-file-upload3"  style={!isActive ? { display: "none" }: { display: "block" }}
+             
 
-                style={{ display: "none" ,
-                }}
+                
                 onClick={() => {
                   stopRecording();
                   pauseRecording();
@@ -151,8 +144,9 @@ const RecordView = (props) => {
                   setIsStoped(true)
                 }}
               >
-                Stop
-              </button>
+                {/* Stop */}
+              {/* </button> */}
+                </label>
             </div>
           </label>
         </div>
