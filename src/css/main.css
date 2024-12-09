@@ -300,6 +300,7 @@ header {
   top: 27px;
   inset-inline-start: -16px;
   transform: rotate(90deg);
+  z-index: -1;
 }
 
 .header-cont {
@@ -2381,7 +2382,7 @@ textarea.form-input {
 
 @media (max-width: 600px) {
   .yell-cont {
-    padding: 46px 10px 85px;
+    padding: 46px 10px 35px;
   }
   .white-cont {
     padding: 16px 0 175px 0;

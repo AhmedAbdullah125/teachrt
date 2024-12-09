@@ -42,7 +42,7 @@ export default function Header() {
         <div className="header-cont">
           <div className="align-header">
             <div className="main-logo">
-              <LazyLoadImage src={logo} alt="image" />
+              <Link to={'/'}><LazyLoadImage src={logo} alt='iTeacher' /></Link>
               <span>GreenWood International School</span>
             </div>
             <div className="main-logo main-select relative" onClick={handleOpenTeacher}>
