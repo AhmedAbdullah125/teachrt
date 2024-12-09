@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import Homepage from './pages/Homepage'
 // import NotFound from './pages/404'
 import { createContext } from 'react';
@@ -12,24 +14,26 @@ import Forget from './components/home/Forget';
 import Login from './components/home/Login';
 import Mail from './components/home/Mail';
 import NewPass from './components/home/NewPass';
+import Layout from './components/Layout';
 
 export const AppContext = createContext();
 
 function App() {
+	const routes = createBrowserRouter([{
+		path: '', element: <Layout></Layout>, children: [
+			{ index: true, element: <Homepage></Homepage> },
+			{ path: '/chat', element: <ChatPage></ChatPage> },
+			{ path: '/forget', element: <Forget></Forget> },
+			{ path: '/login', element: <Login></Login> },
+			{ path: '/mail', element: <Mail></Mail> },
+			{ path: '/newpass', element: <NewPass></NewPass> },
+		]
+	}
+	])
 	return (
-		<AppContext.Provider >
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Homepage />} />
-					<Route path="/chat" element={<ChatPage />} />
-					<Route path="/forget" element={<Forget />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/mail" element={<Mail />} />
-					<Route path="/newpass" element={<NewPass />} />
-					{/* <Route path="*" element={<NotFound />} /> */}
-				</Routes>
-			</BrowserRouter>
-		</AppContext.Provider>
+		<div>
+			<RouterProvider router={routes}></RouterProvider>
+		</div>
 	)
 }
 export default App

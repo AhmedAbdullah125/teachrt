@@ -12,10 +12,10 @@ import rate5 from '/public/rate5.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function ChatBot() {
-    let [activRate, setActiveRate] = useState(5)
+    let [activRate, setActiveRate] = useState(4)
 
-    function handleRate() {
-        console.log("params");
+    function handleRate(params) {
+        console.log(params);
     }
     let messages = [
         { id: 1, message: 'hello', owner: 'me', },
@@ -28,11 +28,11 @@ export default function ChatBot() {
         {
             id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> 
                         <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs">
-                            <img className="${activRate==1 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate1} alt="iTeacher" ></img>
-                            <img className="${activRate==2 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate2} alt="iTeacher" ></img>
-                            <img className="${activRate==3 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate3} alt="iTeacher" ></img>
-                            <img className="${activRate==4 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate4} alt="iTeacher" ></img>
-                            <img className="${activRate==5 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate5} alt="iTeacher" ></img>
+                            <img className="${activRate==1 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate1} alt="iTeacher" ></img>
+                            <img className="${activRate==2 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate2} alt="iTeacher" ></img>
+                            <img className="${activRate==3 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate3} alt="iTeacher" ></img>
+                            <img className="${activRate==4 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate4} alt="iTeacher" ></img>
+                            <img className="${activRate==5 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate5} alt="iTeacher" ></img>
                         </div>`, owner: 'chat', owner: 'char',
         },
         { id: 9, message: 'hello', owner: 'me', },
