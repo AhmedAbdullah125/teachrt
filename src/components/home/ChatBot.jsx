@@ -1,4 +1,4 @@
-// import React from 'react';
+import React, { useState } from 'react';
 import sos from '/public/sos.svg'
 import cls from '/public/cls.png'
 import hager from '/public/hager.svg'
@@ -12,6 +12,11 @@ import rate5 from '/public/rate5.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function ChatBot() {
+    let [activRate, setActiveRate] = useState(5)
+
+    function handleRate() {
+        console.log("params");
+    }
     let messages = [
         { id: 1, message: 'hello', owner: 'me', },
         { id: 2, message: 'Hi! How can I help you today? 😊', owner: 'chat', },
@@ -20,16 +25,21 @@ export default function ChatBot() {
         { id: 5, message: 'yes', owner: 'me', },
         { id: 6, message: 'Great! Let’s dive a bit deeper into adding and subtracting numbers programmatically. I will expand on how to take user input, perform multiple operations, and handle different data types.<div className=bold>Example: Python Program for Adding and Subtracting Numbers</div><div className="code"><div className="code-head"><span>Python</span><span><i className="fa-solid fa-copy"></i> Copy Code</span></div><div className="code-body"><pre className="comment"># Add and subtract two numbers </pre><pre><code>num1 = <span className="number">3</span><br/>num2 = <span className="number">5</span><br/><span className="comment"># Add and subtract two numbers</span><br/>sum_result = num1 + num2<br/>"result = num1 + num2<br/><span className="keyword">print</span>(<span className="variab">"Sum:"</span>, sum_result)<br/> <span className="comment"># Subtraction </span> <br/>sub_result = num1 - num2<br/>"result = num1 - num2<br/><span className="keyword">print</span>(<span className="variab">"Subtraction:"</span>, sub_result)</code></pre></div></div><div className="bold">Steps to Run This Program:</div><ol><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ol><div className="bold">Output:</div><pre className="comment">Sum: 8<br/>Subtraction: -2</pre></div><ul><li>Valid Input: Catch errors if users enter invalid data.</li><li>Large Numbers: Handle very large values (Python supports arbitrarily large integers by default). Here’s an enhanced version with error handling:</li>', owner: 'chat', },
         { id: 7, message: 'hello', owner: 'me', },
-        { id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs">
-                            <img className="w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate1} alt="iTeacher" ></img>
-                            <img className="w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate2} alt="iTeacher" ></img>
-                            <img className="w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate3} alt="iTeacher" ></img>
-                            <img className="w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate4} alt="iTeacher" ></img>
-                            <img className="w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate5} alt="iTeacher" ></lazyloadimage>
-                        </div>`, owner: 'chat', owner: 'char', },
+        {
+            id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> 
+                        <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs">
+                            <img className="${activRate==1 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate1} alt="iTeacher" ></img>
+                            <img className="${activRate==2 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate2} alt="iTeacher" ></img>
+                            <img className="${activRate==3 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate3} alt="iTeacher" ></img>
+                            <img className="${activRate==4 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate4} alt="iTeacher" ></img>
+                            <img className="${activRate==5 ? 'scale-125' : ''} w-12 h-12 px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate5} alt="iTeacher" ></img>
+                        </div>`, owner: 'chat', owner: 'char',
+        },
         { id: 9, message: 'hello', owner: 'me', },
-        { id: 10, message: 'hello', owner: 'me', },
+        { id: 10, message: 'اهلا يا سيدي', owner: 'chat', },
     ]
+    console.log(activRate)
+    
     return (
         <div className="chat-main">
             <div className="yell-cont">
@@ -40,6 +50,13 @@ export default function ChatBot() {
                     <LazyLoadImage src={cls} alt="iTeacher" />
                 </div>
                 <div className="white-cont">
+                    {/* <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
+                        <LazyLoadImage className={`${activRate == 1 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate1} alt="iTeacher" onClick={() => setActiveRate(1)}></LazyLoadImage>
+                        <LazyLoadImage className={`${activRate == 2 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate2} alt="iTeacher" onClick={() => setActiveRate(2)}></LazyLoadImage>
+                        <LazyLoadImage className={`${activRate == 3 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate3} alt="iTeacher" onClick={() => setActiveRate(3)}></LazyLoadImage>
+                        <LazyLoadImage className={`${activRate == 4 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate4} alt="iTeacher" onClick={() => setActiveRate(4)}></LazyLoadImage>
+                        <LazyLoadImage className={`${activRate == 5 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate5} alt="iTeacher" onClick={() => setActiveRate(5)}></LazyLoadImage>
+                    </div> */}
                     <div className="messages-cont">
                         {
                             messages.map((message) =>
@@ -56,7 +73,7 @@ export default function ChatBot() {
                         }
                     </div>
                     <form action="/">
-                        
+
                         <div className="abs-text-area">
                             <textarea className="text-area" placeholder='Message to iteacher...'></textarea>
                         </div>
