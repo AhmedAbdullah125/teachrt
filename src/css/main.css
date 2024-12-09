@@ -1483,7 +1483,7 @@ header {
   }
   .main-home .main-content h2 {
     font-size: 32px;
-    text-align: start;
+    text-align: center;
   }
   .main-home .main-content .counter-cont {
     flex-direction: column;
@@ -2383,7 +2383,18 @@ textarea.form-input {
   .yell-cont {
     padding: 46px 10px 85px;
   }
+  .white-cont {
+    padding: 16px 0 175px 0;
+  }
   .white-cont .messages-cont {
     padding: 0 10px;
+  }
+  .white-cont .abs-text-area {
+    padding: 0 10px;
+    bottom: 10px;
+  }
+  .white-cont .btns-cont {
+    bottom: 25px;
+    inset-inline-end: 20px;
   }
 }/*# sourceMappingURL=main.css.map */

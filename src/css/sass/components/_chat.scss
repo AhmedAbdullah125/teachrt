@@ -250,9 +250,18 @@
     }
 
     .white-cont {
+        padding: 16px 0 175px 0;
         .messages-cont {
             padding: 0 10px;
         }
-
+        .abs-text-area{
+            padding: 0 10px;
+            bottom: 10px;
+        }
+        .btns-cont{
+            bottom: 25px;
+            inset-inline-end: 20px;
+        }
     }
+
 }
