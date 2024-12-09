@@ -126,7 +126,7 @@ export default function Rest() {
                             )
                         }
 
-                        <LazyLoadImage className='tall-dotsmm' style={relatives.length > 3 ? { display: 'block' } : { display: 'none' }} src={tallDots} alt="iTeacher" />
+                        <LazyLoadImage className='tall-dotsmm' style={relatives.length > 3 ? {} : { display: 'none' }} src={tallDots} alt="iTeacher" />
                         {/* <motion.div
                             initial={{ insetInlineStart: 0 }}
                             whileInView={{ insetInlineStart: "100%" }}
