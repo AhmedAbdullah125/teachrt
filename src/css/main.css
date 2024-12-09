@@ -2269,7 +2269,7 @@ textarea.form-input {
   display: none;
 }
 .white-cont .btns-cont .custom-file-upload,
-.white-cont .btns-cont .custom-file-upload2 {
+.white-cont .btns-cont .custom-file-upload2, .white-cont .btns-cont .custom-file-upload3 {
   width: 30px;
   height: 30px;
   position: relative;
@@ -2283,6 +2283,10 @@ textarea.form-input {
 }
 .white-cont .btns-cont .custom-file-upload2 {
   background: url(../images/upload3.png) no-repeat center;
+}
+.white-cont .btns-cont .custom-file-upload3 {
+  background: url(../images/stop.png) no-repeat center;
+  background-size: cover;
 }
 .white-cont .messages-cont {
   display: flex;
@@ -2398,4 +2402,26 @@ textarea.form-input {
     bottom: 25px;
     inset-inline-end: 20px;
   }
+}
+.custom-file-upload,
+.custom-file-upload2, .custom-file-upload3 {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  display: inline-block;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  background: url(../images/upload2.png) no-repeat center;
+  cursor: pointer;
+}
+
+.custom-file-upload2 {
+  background: url(../images/upload3.png) no-repeat center;
+}
+
+.custom-file-upload3 {
+  background: url(../images/stop.png) no-repeat center;
+  background-size: cover;
 }/*# sourceMappingURL=main.css.map */

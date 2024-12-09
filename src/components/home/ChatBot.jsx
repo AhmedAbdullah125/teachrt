@@ -10,9 +10,10 @@ import rate3 from '/public/rate3.svg'
 import rate4 from '/public/rate4.svg'
 import rate5 from '/public/rate5.svg'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Recorder from './Recorder';
 
 export default function ChatBot() {
-    let [activRate, setActiveRate] = useState(4)
+    let [activRate, setActiveRate] = useState(0)
 
     function handleRate(params) {
         console.log(params);
@@ -26,20 +27,13 @@ export default function ChatBot() {
         { id: 6, message: 'Great! Let’s dive a bit deeper into adding and subtracting numbers programmatically. I will expand on how to take user input, perform multiple operations, and handle different data types.<div className=bold>Example: Python Program for Adding and Subtracting Numbers</div><div className="code"><div className="code-head"><span>Python</span><span><i className="fa-solid fa-copy"></i> Copy Code</span></div><div className="code-body"><pre className="comment"># Add and subtract two numbers </pre><pre><code>num1 = <span className="number">3</span><br/>num2 = <span className="number">5</span><br/><span className="comment"># Add and subtract two numbers</span><br/>sum_result = num1 + num2<br/>"result = num1 + num2<br/><span className="keyword">print</span>(<span className="variab">"Sum:"</span>, sum_result)<br/> <span className="comment"># Subtraction </span> <br/>sub_result = num1 - num2<br/>"result = num1 - num2<br/><span className="keyword">print</span>(<span className="variab">"Subtraction:"</span>, sub_result)</code></pre></div></div><div className="bold">Steps to Run This Program:</div><ol><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ol><div className="bold">Output:</div><pre className="comment">Sum: 8<br/>Subtraction: -2</pre></div><ul><li>Valid Input: Catch errors if users enter invalid data.</li><li>Large Numbers: Handle very large values (Python supports arbitrarily large integers by default). Here’s an enhanced version with error handling:</li>', owner: 'chat', },
         { id: 7, message: 'hello', owner: 'me', },
         {
-            id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> 
-                        <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs">
-                            <img className="${activRate==1 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate1} alt="iTeacher" ></img>
-                            <img className="${activRate==2 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate2} alt="iTeacher" ></img>
-                            <img className="${activRate==3 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate3} alt="iTeacher" ></img>
-                            <img className="${activRate==4 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate4} alt="iTeacher" ></img>
-                            <img className="${activRate==5 ? 'scale-125 bg-slate-400' : ''} w-12 h-12 rounded-xl px-3 border-e border-[#E6E6E6] shrink-0 hover:scale-110" src=${rate5} alt="iTeacher" ></img>
-                        </div>`, owner: 'chat', owner: 'char',
+            id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> `, owner: 'chat', owner: 'char', end: true,
         },
         { id: 9, message: 'hello', owner: 'me', },
         { id: 10, message: 'اهلا يا سيدي', owner: 'chat', },
     ]
     console.log(activRate)
-    
+
     return (
         <div className="chat-main">
             <div className="yell-cont">
@@ -65,14 +59,30 @@ export default function ChatBot() {
                                         <p className="message">{parse(message.message)}</p>
                                     </div>
                                     :
-                                    <div className="chatpor-message-cont " key={message.id}>
-                                        <LazyLoadImage src={mLogo} alt="iTeacher" />
-                                        <p className="message">{parse(message.message)}</p>
+                                    <div className="c">
+                                        <div className="chatpor-message-cont " key={message.id}>
+                                            <LazyLoadImage src={mLogo} alt="iTeacher" />
+                                            <div className="message">
+                                                {parse(message.message)}
+
+                                                {
+                                                    message.end ?
+                                                        <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
+                                                            <LazyLoadImage className={`${activRate == 1 ? "scale-125 rounded-[5px] bg-slate-500" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate1} alt="iTeacher" onClick={() => setActiveRate(1)}></LazyLoadImage>
+                                                            <LazyLoadImage className={`${activRate == 2 ? "scale-125 rounded-[5px] bg-slate-500" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate2} alt="iTeacher" onClick={() => setActiveRate(2)}></LazyLoadImage>
+                                                            <LazyLoadImage className={`${activRate == 3 ? "scale-125 rounded-[5px] bg-slate-500" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate3} alt="iTeacher" onClick={() => setActiveRate(3)}></LazyLoadImage>
+                                                            <LazyLoadImage className={`${activRate == 4 ? "scale-125 rounded-[5px] bg-slate-500" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate4} alt="iTeacher" onClick={() => setActiveRate(4)}></LazyLoadImage>
+                                                            <LazyLoadImage className={`${activRate == 5 ? "scale-125 rounded-[5px] bg-slate-500" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate5} alt="iTeacher" onClick={() => setActiveRate(5)}></LazyLoadImage>
+                                                        </div>
+                                                        : null
+                                                }
+                                            </div>
+                                        </div>
                                     </div>
                             )
                         }
                     </div>
-                    <form action="/">
+                    <form action="#">
 
                         <div className="abs-text-area">
                             <textarea className="text-area" placeholder='Message to iteacher...'></textarea>
@@ -81,9 +91,10 @@ export default function ChatBot() {
                             <label htmlFor="file-upload" className="custom-file-upload">
                             </label>
                             <input id="file-upload" className='fileUploader' type="file" />
-                            <label htmlFor="file-upload" className="custom-file-upload2">
+                            {/* <label htmlFor="file-upload" className="custom-file-upload2">
                             </label>
-                            <input id="file-upload" className='fileUploader' type="file" />
+                            <input id="file-upload" className='fileUploader' type="file" /> */}
+                            <Recorder/>
                             <label htmlFor='submit' className="send-btn-cont">
                                 <span className="send-btn">Send</span>
                                 <i className="fa-solid fa-paper-plane"></i>

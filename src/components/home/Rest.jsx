@@ -16,6 +16,7 @@ import { motion } from 'framer-motion';
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Recorder from './Recorder';
 
 
 export default function Rest() {
@@ -153,12 +154,13 @@ export default function Rest() {
                             <LazyLoadImage src={car} alt="iTeacher" />
                         </motion.div> */}
                     </div>
-                    <form className="form-cont">
+                    <form className="form-cont" action="#">
                         <input type="text" placeholder='Write your question here...'></input>
                         <div className="btnss">
                             <label htmlFor="file-upload" className="custom-file-upload">
                             </label>
                             <input id="file-upload" type="file" />
+                            <Recorder/>
                             <label htmlFor="submit" className="custom-submit">
                                 <span>Send</span> <LazyLoadImage src={send} alt='iTeacher'></LazyLoadImage>
                             </label>

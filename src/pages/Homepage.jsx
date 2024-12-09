@@ -1,5 +1,6 @@
 
 import Header from '../components/home/Header';
+// import Recorder from '../components/home/Recorder';
 import SideBar from './../components/SideBar';
 import MainContent from './MainContent';
 export default function Homepage() {
@@ -12,6 +13,7 @@ export default function Homepage() {
                     <SideBar />
                     <MainContent />
                 </main>
+                {/* <Recorder/> */}
             </div>
         </div>
     )
