@@ -849,6 +849,7 @@ header {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  flex-direction: 0;
 }
 .main-home .main-content .help-steps .form-cont .btnss .custom-submit:hover {
   background-color: var(--main-hover);
@@ -2452,6 +2453,7 @@ textarea.form-input {
 
 .player {
   width: 100%;
+  min-width: 170px;
 }
 @media screen and (max-width: 767px) {
   .player {

@@ -308,6 +308,7 @@
 
 .player{
     width: 100%;
+    min-width: 170px;
     @media screen and (max-width: 767px) {
         position: absolute;
         bottom: -65px;

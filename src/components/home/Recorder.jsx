@@ -58,7 +58,7 @@ const RecordView = (props) => {
   //   }
   // }, [isStoped]);
   return (
-    <div className="flex items-center gap-3  flex-wrap">
+    <div className="flex items-center gap-3 ">
       {/* <div
         style={{
           border: "1px solid #bd9f61",
@@ -81,7 +81,7 @@ const RecordView = (props) => {
       </div> */}
       <div style={isStoped ? { display: "block" } : { display: "none" }} className="player">
         {" "}
-        <video src={mediaBlobUrl} controls   style={{ height: "54px"  }} className="md:w-56 w-full"/>
+        <video src={mediaBlobUrl} controls   style={{ height: "54px"  }} className="md:w-56 w-32"/>
       </div>
 
       <div
