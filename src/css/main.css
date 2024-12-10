@@ -241,7 +241,7 @@ header {
   padding: 6px 0;
   background-color: white;
   border-radius: 12px;
-  min-width: 170px;
+  min-width: 130px;
   max-width: 200px;
   top: 18px;
   z-index: 20;
@@ -270,16 +270,17 @@ header {
 }
 
 .trings-cont .dropp {
-  top: -30px;
-  inset-inline-end: calc(20% + 20px);
   z-index: 300;
+  bottom: calc(100% + 4px);
+  top: unset;
+  inset-inline-end: 0;
 }
 .trings-cont .arrow-after {
-  top: 46%;
-  bottom: unset;
-  inset-inline-end: -10px;
+  top: unset;
+  bottom: -14px;
+  inset-inline-end: 18px;
   z-index: -1;
-  /* transform: rotate(180deg);*/
+  transform: rotate(0deg);
 }
 
 .rates-imgs img {
@@ -734,44 +735,53 @@ header {
   overflow: hidden;
   z-index: 3;
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(1), .main-home .main-content .help-steps .trings-cont .relative:nth-child(7) {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(1),
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(7) {
   margin-inline-start: 0;
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(1) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(7) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(1) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(7) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(0, 98, 168) 50%, rgb(14, 118, 188) 50%);
   -webkit-clip-path: polygon(0% 0%, 84% 0, 100% 50%, 84% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 84% 0, 100% 50%, 84% 100%, 0% 100%);
   height: 100%;
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(2) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(8) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(2) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(8) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(234, 158, 23) 50%, rgb(254, 178, 43) 50%);
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(3) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(9) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(3) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(9) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(232, 91, 24) 50%, rgb(242, 101, 34) 50%);
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(3) .dotted-star .dots, .main-home .main-content .help-steps .trings-cont .relative:nth-child(9) .dotted-star .dots {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(3) .dotted-star .dots,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(9) .dotted-star .dots {
   display: none;
 }
 .main-home .main-content .help-steps .trings-cont .relative:nth-child(9) .dotted-star .dots {
   display: block;
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(4), .main-home .main-content .help-steps .trings-cont .relative:nth-child(10) {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(4),
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(10) {
   margin-inline-start: 0;
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(4) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(10) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(4) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(10) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(61, 175, 174) 50%, rgb(81, 195, 194) 50%);
   -webkit-clip-path: polygon(0% 0%, 84% 0, 100% 50%, 84% 100%, 0% 100%);
           clip-path: polygon(0% 0%, 84% 0, 100% 50%, 84% 100%, 0% 100%);
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(5) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(11) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(5) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(11) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(3, 161, 213) 50%, rgb(23, 181, 233) 50%);
 }
-.main-home .main-content .help-steps .trings-cont .relative:nth-child(6) .tring, .main-home .main-content .help-steps .trings-cont .relative:nth-child(12) .tring {
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(6) .tring,
+.main-home .main-content .help-steps .trings-cont .relative:nth-child(12) .tring {
   background: rgb(0, 98, 168);
   background: linear-gradient(0deg, rgb(18, 67, 147) 50%, rgb(38, 87, 167) 50%);
 }
@@ -815,6 +825,9 @@ header {
   display: flex;
   gap: 8px;
   align-items: center;
+  max-width: 200px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .main-home .main-content .help-steps .form-cont .btnss .custom-submit {
   padding: 10px 16px;

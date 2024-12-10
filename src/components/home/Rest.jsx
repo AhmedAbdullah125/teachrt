@@ -78,7 +78,7 @@ export default function Rest() {
 
                         {
                             relatives.map((item, index) =>
-                                <div className="relative" key={item.id}>
+                                <div className="relative" style={relatives.length - 1 === index ? { zIndex:relatives.length } : {zIndex: index +1}} key={item.id}>
                                     <div
                                         className="dotted-star">
                                         <LazyLoadImage className='star' src={tringStar} alt="iTeacher" />
@@ -154,13 +154,13 @@ export default function Rest() {
                             <LazyLoadImage src={car} alt="iTeacher" />
                         </motion.div> */}
                     </div>
-                    <form className="form-cont" action="#">
+                    <form className="form-cont" action="#" id='form-cont'>
                         <input type="text" placeholder='Write your question here...'></input>
                         <div className="btnss">
+                            <Recorder/>
                             <label htmlFor="file-upload" className="custom-file-upload">
                             </label>
                             <input id="file-upload" type="file" />
-                            <Recorder/>
                             <label htmlFor="submit" className="custom-submit">
                                 <span>Send</span> <LazyLoadImage src={send} alt='iTeacher'></LazyLoadImage>
                             </label>

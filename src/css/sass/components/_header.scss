@@ -34,7 +34,7 @@ header {
   padding: 6px 0;
   background-color: white;
   border-radius: 12px;
-  min-width: 170px;
+  min-width: 130px;
   max-width: 200px;
   top: 18px;
   z-index: 20;
@@ -68,17 +68,20 @@ header {
 
 .trings-cont {
   .dropp {
-    top: -30px;
-    inset-inline-end: calc(20% + 20px);
+    // top: -30px;
+    // inset-inline-end: calc(20% + 20px);
     z-index: 300;
+    bottom: calc(100% + 4px);
+    top: unset;
+    inset-inline-end: 0;
   }
 
   .arrow-after {
-    top: 46%;
-    bottom: unset;
-    inset-inline-end: -10px;
+    top: unset;
+    bottom: -14px;
+    inset-inline-end: 18px;
     z-index: -1;
-    /* transform: rotate(180deg);*/
+    transform: rotate(0deg);
 
   }
 }
