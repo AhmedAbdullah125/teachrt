@@ -52,11 +52,11 @@ const RecordView = (props) => {
     echoCancellation: true
   });
   console.log("url", mediaBlobUrl);
-  useEffect(() => {
-    if (isStoped) {
-    document.getElementById("form-cont").style.height = "104px";
-    }
-  }, [isStoped]);
+  // useEffect(() => {
+  //   if (isStoped) {
+  //   document.getElementById("form-cont").style.height = "120px";
+  //   }
+  // }, [isStoped]);
   return (
     <div className="flex items-center gap-3  flex-wrap">
       {/* <div
@@ -79,9 +79,9 @@ const RecordView = (props) => {
           {status}
         </h4>
       </div> */}
-      <div style={isStoped ? { display: "block" } : { display: "none" }}>
+      <div style={isStoped ? { display: "block" } : { display: "none" }} className="player">
         {" "}
-        <video src={mediaBlobUrl} controls   style={{ height: "54px"  }} className="md:w-56 w-32"/>
+        <video src={mediaBlobUrl} controls   style={{ height: "54px"  }} className="md:w-56 w-full"/>
       </div>
 
       <div

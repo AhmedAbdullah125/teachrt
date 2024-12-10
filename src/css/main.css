@@ -719,6 +719,16 @@ header {
   color: var(--white-color);
   margin-bottom: 0;
 }
+.main-home .main-content .help-steps .trings-cont .tring img {
+  width: 34px;
+  height: 34px;
+}
+@media screen and (max-width: 767px) {
+  .main-home .main-content .help-steps .trings-cont .tring img {
+    width: 25px;
+    height: 25px;
+  }
+}
 .main-home .main-content .help-steps .trings-cont .relative {
   margin-inline-start: -20%;
   height: 100%;
@@ -826,7 +836,6 @@ header {
   gap: 8px;
   align-items: center;
   max-width: 200px;
-  flex-wrap: wrap;
   justify-content: flex-end;
 }
 .main-home .main-content .help-steps .form-cont .btnss .custom-submit {
@@ -873,7 +882,7 @@ header {
 
 .car-cont-2 {
   position: absolute;
-  bottom: 75px;
+  bottom: 100%;
   inset-inline-start: 0;
 }
 
@@ -2282,7 +2291,8 @@ textarea.form-input {
   display: none;
 }
 .white-cont .btns-cont .custom-file-upload,
-.white-cont .btns-cont .custom-file-upload2, .white-cont .btns-cont .custom-file-upload3 {
+.white-cont .btns-cont .custom-file-upload2,
+.white-cont .btns-cont .custom-file-upload3 {
   width: 30px;
   height: 30px;
   position: relative;
@@ -2417,7 +2427,8 @@ textarea.form-input {
   }
 }
 .custom-file-upload,
-.custom-file-upload2, .custom-file-upload3 {
+.custom-file-upload2,
+.custom-file-upload3 {
   width: 30px;
   height: 30px;
   position: relative;
@@ -2437,4 +2448,15 @@ textarea.form-input {
 .custom-file-upload3 {
   background: url(../images/stop.png) no-repeat center;
   background-size: cover;
+}
+
+.player {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .player {
+    position: absolute;
+    bottom: -65px;
+    width: 180px;
+  }
 }/*# sourceMappingURL=main.css.map */

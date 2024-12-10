@@ -15,13 +15,16 @@
     height: 100%;
 
 }
-.submit-btn-with-label{
+
+.submit-btn-with-label {
     display: none;
 }
-.mx-auto{
+
+.mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
+
 .sos-cont {
     width: 72%;
     position: absolute;
@@ -111,7 +114,8 @@
         }
 
         .custom-file-upload,
-        .custom-file-upload2,.custom-file-upload3 {
+        .custom-file-upload2,
+        .custom-file-upload3 {
             width: 30px;
             height: 30px;
             position: relative;
@@ -129,8 +133,9 @@
             background: url(../images/upload3.png) no-repeat center;
 
         }
+
         .custom-file-upload3 {
-            background: url(../images/stop.png) no-repeat center ;
+            background: url(../images/stop.png) no-repeat center;
             background-size: cover;
         }
     }
@@ -255,40 +260,57 @@
 
     .white-cont {
         padding: 16px 0 175px 0;
+
         .messages-cont {
             padding: 0 10px;
         }
-        .abs-text-area{
+
+        .abs-text-area {
             padding: 0 10px;
             bottom: 10px;
         }
-        .btns-cont{
+
+        .btns-cont {
             bottom: 25px;
             inset-inline-end: 20px;
         }
     }
 
+
 }
+
 .custom-file-upload,
-        .custom-file-upload2,.custom-file-upload3 {
-            width: 30px;
-            height: 30px;
-            position: relative;
-            z-index: 10;
-            // opacity: 0;
-            background-color: transparent;
-            display: inline-block;
-            padding: 6px 12px;
-            flex-shrink: 0;
-            background: url(../images/upload2.png) no-repeat center;
-            cursor: pointer;
-        }
+.custom-file-upload2,
+.custom-file-upload3 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 10;
+    // opacity: 0;
+    background-color: transparent;
+    display: inline-block;
+    padding: 6px 12px;
+    flex-shrink: 0;
+    background: url(../images/upload2.png) no-repeat center;
+    cursor: pointer;
+}
 
-        .custom-file-upload2 {
-            background: url(../images/upload3.png) no-repeat center;
+.custom-file-upload2 {
+    background: url(../images/upload3.png) no-repeat center;
 
-        }
-        .custom-file-upload3 {
-            background: url(../images/stop.png) no-repeat center ;
-            background-size: cover;
-        }
+}
+
+.custom-file-upload3 {
+    background: url(../images/stop.png) no-repeat center;
+    background-size: cover;
+}
+
+
+.player{
+    width: 100%;
+    @media screen and (max-width: 767px) {
+        position: absolute;
+        bottom: -65px;
+        width: 180px;
+    }
+}

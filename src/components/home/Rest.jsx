@@ -108,7 +108,6 @@ export default function Rest() {
                                         viewport={{ once: true }}
                                         className="tring">
                                         <h5>{item.text}</h5>
-                                        <div className="relative">
                                             <LazyLoadImage src={arrowDown} alt="iTeacher" onClick={() => {
                                                 if (open === item.id) {
                                                     setOpen(0)
@@ -116,7 +115,6 @@ export default function Rest() {
                                                     setOpen(item.id)
                                                 }
                                             }} />
-                                        </div>
                                     </motion.div>
                                     <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
                                         <div className="arrow-after" ></div>
