@@ -71,9 +71,9 @@ header {
     // top: -30px;
     // inset-inline-end: calc(20% + 20px);
     z-index: 300;
-    bottom: calc(100% + 4px);
+    bottom: calc(100% + 11px);
     top: unset;
-    inset-inline-end: 0;
+    inset-inline-end: 10px;
   }
 
   .arrow-after {

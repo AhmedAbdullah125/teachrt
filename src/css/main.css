@@ -271,9 +271,9 @@ header {
 
 .trings-cont .dropp {
   z-index: 300;
-  bottom: calc(100% + 4px);
+  bottom: calc(100% + 11px);
   top: unset;
-  inset-inline-end: 0;
+  inset-inline-end: 10px;
 }
 .trings-cont .arrow-after {
   top: unset;

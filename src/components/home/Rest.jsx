@@ -78,7 +78,7 @@ export default function Rest() {
 
                         {
                             relatives.map((item, index) =>
-                                <div className="relative" style={relatives.length - 1 === index ? { zIndex:relatives.length } : {zIndex: index +1}} key={item.id}>
+                                <div className="relative" style={relatives.length - 1 === index ? { zIndex:relatives.length } : {zIndex: index +2}} key={item.id}>
                                     <div
                                         className="dotted-star">
                                         <LazyLoadImage className='star' src={tringStar} alt="iTeacher" />
