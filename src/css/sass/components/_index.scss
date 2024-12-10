@@ -547,7 +547,7 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            flex-direction: 0;
+            flex-shrink: 0;
           }
 
           .custom-submit:hover {

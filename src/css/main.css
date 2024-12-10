@@ -849,7 +849,7 @@ header {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  flex-direction: 0;
+  flex-shrink: 0;
 }
 .main-home .main-content .help-steps .form-cont .btnss .custom-submit:hover {
   background-color: var(--main-hover);
