@@ -62,6 +62,7 @@ export default function Header() {
               <div className="arrow-after" ></div>
               <Link to={'/login'} className=""><LazyLoadImage src={ters} alt='iTeacher' /><span>setting</span></Link>
               <Link to={'/newpass'} className=""><LazyLoadImage src={plan} alt='iTeacher' /><span>My Plan</span></Link>
+              <Link to={'/login'} className=""><LazyLoadImage src={plan} alt='iTeacher' /><span>Log Out</span></Link>
             </div>
           </div>
         </div>

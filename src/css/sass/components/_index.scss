@@ -18,6 +18,9 @@
   background-image: url(../images/sign-bg.svg);
   background-size: cover;
   background-position: center;
+  .profile-cont{
+    display: none;
+  }
 }
 
 .num-back {
@@ -27,9 +30,9 @@
 
 }
 
-.car-cont-2 {
-  display: none;
-}
+// .car-cont-2 {
+//   display: none;
+// }
 
 .main-home {
   position: relative;
@@ -320,6 +323,7 @@
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 30px;
       position: relative;
+      box-shadow: 0px 0px 24px 0px #00000024;
 
       .cloud-img {
         position: absolute;
@@ -336,7 +340,7 @@
         font-weight: 700;
         color: #1F1F1F;
         text-align: center;
-        margin-bottom: 74px;
+        margin-bottom: 34px;
       }
 
       .trings-cont {
@@ -350,7 +354,7 @@
 
         .tall-dotsmm {
           position: absolute;
-          top: -13px;
+          top: -6px;
           inset-inline-start: -8px;
           z-index: 2;
           // width: 100%;
@@ -394,7 +398,7 @@
         .dotted-star {
           position: absolute;
           top: -20px;
-          inset-inline-start: 30px;
+          inset-inline-start: 17px;
           display: flex;
           align-items: center;
           gap: 9px;
@@ -493,15 +497,15 @@
       //   }
       // }
 
-      .trings-cont .relative:nth-last-child(2) {
-        .dotted-star {
-          display: none;
-        }
+      // .trings-cont .relative:nth-last-child(2) {
+      //   .dotted-star {
+      //     display: none;
+      //   }
 
-        .car-cont-2 {
-          display: block;
-        }
-      }
+      //   .car-cont-2 {
+      //     display: block;
+      //   }
+      // }
 
       .form-cont {
         width: 100%;
@@ -515,6 +519,7 @@
           border-radius: 56px;
           padding: 6px 200px 6px 20px;
           border: 1px solid transparent;
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
         }
 
         input::placeholder {
@@ -1418,6 +1423,7 @@
 
   .main-home .main-content .help-steps {
     padding: 32px 10px 10px;
+    box-shadow: 0px 0px 4px $main;
 
     .trings-cont .tring {
       padding: 14px 14px 14px 16%;

@@ -27,14 +27,15 @@ export default function Rest() {
         { id: 4, text: "First Level 4" },
         { id: 5, text: "First Level 5" },
         { id: 6, text: "First Level 9" },
-        { id: 7, text: "First Level 1" },
-        { id: 8, text: "First Level 2" },
-        { id: 9, text: "First Level 3" },
-        { id: 10, text: "First Level 4" },
-        { id: 11, text: "First Level 5" },
-        { id: 12, text: "First Level 9" },
+        { id: 7, text: "First Level 10" },
+        { id: 8, text: "First Level 11" },
+        { id: 9, text: "First Level 12" },
+        { id: 10, text: "First Level 13" },
+        { id: 11, text: "First Level 14" },
+        { id: 12, text: "First Level 15" },
     ]
     let [open, setOpen] = useState(0)
+    let [activStep, setActivStep] = useState(8)
     return (
         <div className="rest">
             <h2>Conversation <span>AI Solutions</span> Infinite Possibilities 💪🏻</h2>
@@ -78,36 +79,37 @@ export default function Rest() {
 
                         {
                             relatives.map((item, index) =>
-                                <div className="relative" style={relatives.length - 1 === index ? { zIndex:relatives.length } : {zIndex: index +2}} key={item.id}>
-                                    <div
-                                        className="dotted-star">
-                                        <LazyLoadImage className='star' src={tringStar} alt="iTeacher" />
-                                        <LazyLoadImage className='dots' src={dots} alt="iTeacher" />
-                                    </div>
-                                    <motion.div
-                                        initial={{ insetInlineStart: 0 }}
-                                        whileInView={{ insetInlineStart: "50%" }}
-                                        viewport={{ once: true }}
-                                        transition={{
-                                            type: 'linear',
-                                            bounce: 0,
-                                            duration: 5,
-                                            delay: 0
-                                        }}
-                                        className="car-cont-2">
-                                        <LazyLoadImage src={car} alt="iTeacher" />
-                                    </motion.div>
-                                    <motion.div
-                                        initial={{ opacity: 0, x: -100 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{
-                                            type: 'spring',
-                                            bounce: 0.2,
-                                            duration: index * .1,
-                                        }}
-                                        viewport={{ once: true }}
-                                        className="tring">
-                                        <h5>{item.text}</h5>
+                                    <div className={`relative ${activStep >= index ? '' : 'hidden'}`} style={relatives.length - 1 === index ? { zIndex: relatives.length } : { zIndex: index + 2 }} key={item.id}>
+                                        <div className="dd">
+                                        <div className={ `dotted-star`} style={activStep > index+1 ? { display: 'block' } : { display: 'none' }}>
+                                            <LazyLoadImage className='star' src={tringStar} alt="iTeacher" />
+                                            <LazyLoadImage className='dots' src={dots} alt="iTeacher" />
+                                        </div>
+                                        <motion.div
+                                            initial={{ insetInlineStart: 0 }}
+                                            whileInView={{ insetInlineStart: "30%" }}
+                                            viewport={{ once: true }}
+                                            transition={{
+                                                type: 'linear',
+                                                bounce: 0,
+                                                duration: 5,
+                                                delay: 0
+                                            }}
+                                            style={activStep === index+1 ? { display: 'block' } : { display: 'none' }}
+                                            className="car-cont-2">
+                                            <LazyLoadImage src={car} alt="iTeacher" />
+                                        </motion.div>
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -100 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{
+                                                type: 'spring',
+                                                bounce: 0.2,
+                                                duration: index * .1,
+                                            }}
+                                            viewport={{ once: true }}
+                                            className="tring">
+                                            <h5>{item.text}</h5>
                                             <LazyLoadImage src={arrowDown} alt="iTeacher" onClick={() => {
                                                 if (open === item.id) {
                                                     setOpen(0)
@@ -115,11 +117,12 @@ export default function Rest() {
                                                     setOpen(item.id)
                                                 }
                                             }} />
-                                    </motion.div>
-                                    <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
-                                        <div className="arrow-after" ></div>
-                                        <Link to={'/chat'} className=""><span>chat</span></Link>
-                                        <Link to={'/login'} className=""><span>Login</span></Link>
+                                        </motion.div>
+                                        <div className="dropp absolute " style={open === item.id ? { opacity: 1, visibility: "visible" } : { opacity: 0, visibility: "hidden" }}>
+                                            <div className="arrow-after" ></div>
+                                            <Link to={'/chat'} className=""><span>chat</span></Link>
+                                            <Link to={'/login'} className=""><span>Login</span></Link>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -155,7 +158,7 @@ export default function Rest() {
                     <form className="form-cont" action="#" id='form-cont'>
                         <input type="text" placeholder='Write your question here...'></input>
                         <div className="btnss">
-                            <Recorder/>
+                            <Recorder />
                             <label htmlFor="file-upload" className="custom-file-upload">
                             </label>
                             <input id="file-upload" type="file" />
