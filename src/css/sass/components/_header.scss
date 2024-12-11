@@ -22,6 +22,7 @@ header {
 
 .profile-cont {
   cursor: pointer;
+
   .arrow-after {
     position: absolute;
     top: 12px;
@@ -47,7 +48,9 @@ header {
     text-align: center;
     gap: 8px;
     border-bottom: 1px solid #ECECEC;
-    span{
+    font-size: 14px;
+
+    span {
       width: 100%;
       text-align: center;
     }
@@ -85,20 +88,29 @@ header {
 
   }
 }
-.rates-imgs{
-  img{
-    width: 44px!important;
+
+.rates-imgs {
+  img {
+    width: 44px !important;
     height: 44px !important;
   }
 }
+
 .main-select {
   z-index: 20;
   cursor: pointer;
+
   .dropp {
     top: 0px;
     inset-inline-start: calc(100% + 18px);
     z-index: 50;
-}
+    padding: 6px 0;
+    background-color: #fff;
+    border-radius: 12px;
+    min-width: 130px;
+    max-width: 100%;
+    width: 100%;
+  }
 
   .arrow-after {
     top: 27px;
@@ -115,14 +127,14 @@ header {
 }
 
 .user-name {
-  width: 70px;
+  width: 65px;
   aspect-ratio: 1;
   border-radius: 50%;
   flex-shrink: 0;
   z-index: 2;
   @include flexCenter;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 22px;
   color: $white;
   background-color: #0e76bc;
   text-transform: uppercase;
@@ -136,7 +148,7 @@ header {
 .align-header {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 26px;
   justify-content: flex-start;
   flex-wrap: wrap;
 
@@ -154,10 +166,10 @@ header {
   backdrop-filter: blur(54px);
   color: $sec;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
   padding: 5px 24px 5px 5px;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 70px;
+  height: 65px;
 
   button {
     width: unset;
