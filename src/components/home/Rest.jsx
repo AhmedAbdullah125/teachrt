@@ -35,7 +35,7 @@ export default function Rest() {
         { id: 12, text: "First Level 15" },
     ]
     let [open, setOpen] = useState(0)
-    let [activStep, setActivStep] = useState(8)
+    let [activStep, setActivStep] = useState(4)
     return (
         <div className="rest">
             <h2>Conversation <span>AI Solutions</span> Infinite Possibilities 💪🏻</h2>
@@ -128,7 +128,7 @@ export default function Rest() {
                             )
                         }
 
-                        <LazyLoadImage className='tall-dotsmm' style={relatives.length > 3 ? {} : { display: 'none' }} src={tallDots} alt="iTeacher" />
+                        <LazyLoadImage className={`${activStep >= 3?"tall-dotsmm":"hidden"}`} style={relatives.length > 3 ? {} : { display: 'none' }} src={tallDots} alt="iTeacher" />
                         {/* <motion.div
                             initial={{ insetInlineStart: 0 }}
                             whileInView={{ insetInlineStart: "100%" }}
