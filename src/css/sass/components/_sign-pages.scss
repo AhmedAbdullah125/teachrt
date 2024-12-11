@@ -120,6 +120,7 @@
   background-color: $white;
   width: 100%;
   overflow: hidden;
+  display: flex;
   @include max-1200 {
     display: none;
   }
@@ -174,9 +175,9 @@
 }
 .sign-form-head {
   background-color: #eae8fd;
-  padding: 43px 20px 20px;
+  padding: 20px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   color: $sec;
   text-align: center;
   text-transform: capitalize;
@@ -197,7 +198,7 @@
 }
 .sign-form-cont {
   text-align: end;
-  padding: 50px 20px 50px;
+  padding: 20px;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -379,19 +380,19 @@ textarea.form-input {
 }
 .sign-v1 {
   top: 31px;
-  inset-inline-end: 53px;
+  inset-inline-end: 13px;
 }
 .sign-v2 {
-  top: 96px;
-  inset-inline-start: 63px;
+  top: 36px;
+  inset-inline-start: 13px;
 }
 .sign-v3 {
-  top: 268px;
-  inset-inline-end: 63px;
+  top: 208px;
+  inset-inline-end: 13px;
 }
 .sign-v4 {
-  top: 315px;
-  inset-inline-start: 53px;
+  top: 250px;
+  inset-inline-start: 13px;
 }
 .form-ex {
   position: absolute;

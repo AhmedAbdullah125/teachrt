@@ -124,7 +124,7 @@
       }
 
       h3 {
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 700;
         color: $white;
         margin-bottom: 0;
@@ -215,7 +215,7 @@
 
           .counter {
             span {
-              font-size: 40px;
+              font-size: 32px;
               line-height: 24px;
               font-weight: 800;
               color: #1F1F1F;
@@ -224,7 +224,7 @@
             }
 
             p {
-              font-size: 20px;
+              font-size: 18px;
               font-weight: 400;
               color: #525252;
               margin-bottom: 0;
@@ -332,7 +332,7 @@
       }
 
       h3 {
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 700;
         color: #1F1F1F;
         text-align: center;
@@ -370,7 +370,7 @@
           clip-path: polygon(84% 0, 100% 50%, 84% 100%, 0% 100%, 16% 50%, 0% 0%);
 
           h5 {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: $white;
             margin-bottom: 0;
@@ -629,11 +629,11 @@
 }
 
 .freq {
-  padding: 5px 22px 70px;
+  padding: 5px 12px 70px;
   background-color: #f9f6ef;
   border-radius: 50px;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   position: relative;
   margin-bottom: 100px;
   z-index: 1;
@@ -674,7 +674,7 @@
     z-index: 5;
 
     h3 {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 700;
       margin-bottom: 0;
       color: #1F1F1F;
@@ -730,14 +730,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
   .sub {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    padding: 30px;
+    padding: 16px;
     // background-color: $white;
     border-radius: 20px;
     z-index: 5;
@@ -1061,7 +1061,7 @@
 
 .suggested-subjects {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin-bottom: 100px;
 
   .heading {
@@ -1072,7 +1072,7 @@
 
     h2 {
       margin-bottom: 0;
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: #1F1F1F;
       margin-bottom: 0;
@@ -1121,11 +1121,11 @@
         margin-bottom: 20px;
 
         span {
-          padding: 3px 6px;
+          padding: 3px 2px;
           border-radius: 10px;
           border: 1px solid $white;
           color: $white;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 500;
           line-height: 32px;
           text-wrap: nowrap;
@@ -1143,12 +1143,12 @@
       p {
         color: $white;
         margin-bottom: 24px;
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 400;
       }
 
       button {
-        padding: 0 28px;
+        padding: 0 14px;
         border-radius: 10px;
         background-color: var(--white-color);
         color: #1F1F1F;
@@ -1156,7 +1156,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+        font-size: 14px;
       }
 
       button:hover {
@@ -1463,7 +1463,7 @@
     background-color: #f9f6ef;
     border-radius: 50px;
     width: 100%;
-    max-width: 960px;
+    max-width: 700px;
     position: relative;
     margin-bottom: 100px;
   }

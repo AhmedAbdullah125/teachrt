@@ -1,6 +1,6 @@
 .chat-main {
     width: 100%;
-    max-width: 880px;
+    max-width: 700px;
     max-height: calc(100vh - 180px);
     margin: 0 auto;
 }
@@ -10,7 +10,7 @@
     width: 100%;
     border-radius: 32px;
     position: relative;
-    padding: 46px 20px 85px;
+    padding: 32px 10px 85px;
     margin: auto;
     height: 100%;
 
@@ -62,9 +62,9 @@
 
     .abs-text-area {
         position: absolute;
-        bottom: 30px;
+        bottom: 15px;
         width: 100%;
-        padding: 0 30px;
+        padding: 0 15px;
 
 
         textarea {
@@ -89,11 +89,11 @@
 
 
         .send-btn-cont {
-            padding: 12px 34px;
+            padding: 12px 18px;
             background-color: #FF9B0B;
             border-radius: 100px;
             color: $white;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -146,7 +146,7 @@
         gap: 20px;
         overflow: auto;
         height: 100%;
-        padding: 0 30px;
+        padding: 0 15px;
     }
 
     .message-cont {
@@ -162,7 +162,7 @@
             width: fit-content;
             direction: rtl;
             display: block;
-            font-size: 16px;
+            font-size: 14spx;
             font-weight: 400;
         }
     }
@@ -239,7 +239,7 @@
             color: #1F1F1F;
             width: fit-content;
             display: block;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 36px;
             font-weight: 400;
             width: 100%;

@@ -178,7 +178,7 @@ select {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1170px;
+    max-width: 990px;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -187,7 +187,7 @@ select {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1252px;
+    max-width: 1000px;
   }
 }
 .container-fluid {
@@ -362,7 +362,7 @@ header {
           backdrop-filter: blur(54px);
   color: var(--sec-color);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   padding: 5px 24px 5px 5px;
   background-color: rgba(255, 255, 255, 0.5);
   height: 65px;
@@ -521,7 +521,7 @@ header {
   animation: cloud 40s infinite alternate;
 }
 .main-home .side-bar .discussions h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--white-color);
   margin-bottom: 0;
@@ -597,14 +597,14 @@ header {
   height: auto;
 }
 .main-home .main-content .counter-cont .contter .bordered-counter .counter span {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 24px;
   font-weight: 800;
   color: #1F1F1F;
   margin-bottom: 15px;
 }
 .main-home .main-content .counter-cont .contter .bordered-counter .counter p {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #525252;
   margin-bottom: 0;
@@ -688,7 +688,7 @@ header {
   animation: cloud 40s infinite alternate;
 }
 .main-home .main-content .help-steps h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: #1F1F1F;
   text-align: center;
@@ -723,7 +723,7 @@ header {
           clip-path: polygon(84% 0, 100% 50%, 84% 100%, 0% 100%, 16% 50%, 0% 0%);
 }
 .main-home .main-content .help-steps .trings-cont .tring h5 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--white-color);
   margin-bottom: 0;
@@ -926,11 +926,11 @@ header {
 }
 
 .freq {
-  padding: 5px 22px 70px;
+  padding: 5px 12px 70px;
   background-color: #f9f6ef;
   border-radius: 50px;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   position: relative;
   margin-bottom: 100px;
   z-index: 1;
@@ -967,7 +967,7 @@ header {
   z-index: 5;
 }
 .freq .heading h3 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 0;
   color: #1F1F1F;
@@ -1008,14 +1008,14 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 .freq-subs .sub {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 30px;
+  padding: 16px;
   border-radius: 20px;
   z-index: 5;
   position: relative;
@@ -1281,7 +1281,7 @@ header {
 
 .suggested-subjects {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin-bottom: 100px;
 }
 .suggested-subjects .heading {
@@ -1292,7 +1292,7 @@ header {
 }
 .suggested-subjects .heading h2 {
   margin-bottom: 0;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: #1F1F1F;
   margin-bottom: 0;
@@ -1337,11 +1337,11 @@ header {
   margin-bottom: 20px;
 }
 .suggested-subjects .sug-subs-cont .sug .garde span {
-  padding: 3px 6px;
+  padding: 3px 2px;
   border-radius: 10px;
   border: 1px solid var(--white-color);
   color: var(--white-color);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 32px;
   text-wrap: nowrap;
@@ -1356,11 +1356,11 @@ header {
 .suggested-subjects .sug-subs-cont .sug p {
   color: var(--white-color);
   margin-bottom: 24px;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 400;
 }
 .suggested-subjects .sug-subs-cont .sug button {
-  padding: 0 28px;
+  padding: 0 14px;
   border-radius: 10px;
   background-color: var(--white-color);
   color: #1F1F1F;
@@ -1368,6 +1368,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
 }
 .suggested-subjects .sug-subs-cont .sug button:hover {
   background-color: var(--main-hover);
@@ -1605,7 +1606,7 @@ header {
     background-color: #f9f6ef;
     border-radius: 50px;
     width: 100%;
-    max-width: 960px;
+    max-width: 700px;
     position: relative;
     margin-bottom: 100px;
   }
@@ -1762,6 +1763,7 @@ footer {
   background-color: var(--white-color);
   width: 100%;
   overflow: hidden;
+  display: flex;
 }
 @media only screen and (max-width: 1199px) {
   .sign-hero {
@@ -1818,9 +1820,9 @@ footer {
 
 .sign-form-head {
   background-color: #eae8fd;
-  padding: 43px 20px 20px;
+  padding: 20px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--sec-color);
   text-align: center;
   text-transform: capitalize;
@@ -1844,7 +1846,7 @@ footer {
 
 .sign-form-cont {
   text-align: end;
-  padding: 50px 20px 50px;
+  padding: 20px;
   width: 100%;
   position: relative;
   z-index: 3;
@@ -2047,22 +2049,22 @@ textarea.form-input {
 
 .sign-v1 {
   top: 31px;
-  inset-inline-end: 53px;
+  inset-inline-end: 13px;
 }
 
 .sign-v2 {
-  top: 96px;
-  inset-inline-start: 63px;
+  top: 36px;
+  inset-inline-start: 13px;
 }
 
 .sign-v3 {
-  top: 268px;
-  inset-inline-end: 63px;
+  top: 208px;
+  inset-inline-end: 13px;
 }
 
 .sign-v4 {
-  top: 315px;
-  inset-inline-start: 53px;
+  top: 250px;
+  inset-inline-start: 13px;
 }
 
 .form-ex {
@@ -2198,7 +2200,7 @@ textarea.form-input {
 
 .chat-main {
   width: 100%;
-  max-width: 880px;
+  max-width: 700px;
   max-height: calc(100vh - 180px);
   margin: 0 auto;
 }
@@ -2208,7 +2210,7 @@ textarea.form-input {
   width: 100%;
   border-radius: 32px;
   position: relative;
-  padding: 46px 20px 85px;
+  padding: 32px 10px 85px;
   margin: auto;
   height: 100%;
 }
@@ -2256,9 +2258,9 @@ textarea.form-input {
 }
 .white-cont .abs-text-area {
   position: absolute;
-  bottom: 30px;
+  bottom: 15px;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 15px;
 }
 .white-cont .abs-text-area textarea {
   width: 100%;
@@ -2279,11 +2281,11 @@ textarea.form-input {
   gap: 15px;
 }
 .white-cont .btns-cont .send-btn-cont {
-  padding: 12px 34px;
+  padding: 12px 18px;
   background-color: #FF9B0B;
   border-radius: 100px;
   color: var(--white-color);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -2327,7 +2329,7 @@ textarea.form-input {
   gap: 20px;
   overflow: auto;
   height: 100%;
-  padding: 0 30px;
+  padding: 0 15px;
 }
 .white-cont .message-cont {
   width: 100%;
@@ -2343,7 +2345,7 @@ textarea.form-input {
   width: fit-content;
   direction: rtl;
   display: block;
-  font-size: 16px;
+  font-size: 14spx;
   font-weight: 400;
 }
 .white-cont .chatpor-message-cont {
@@ -2406,7 +2408,7 @@ textarea.form-input {
   width: -moz-fit-content;
   width: fit-content;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 36px;
   font-weight: 400;
   width: 100%;
