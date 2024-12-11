@@ -437,9 +437,9 @@ header {
   gap: 40px;
 }
 .main-home .side-bar {
-  width: 450px;
+  width: 400px;
   background-color: #6255A4;
-  padding: 27px 40px;
+  padding: 27px 20px;
   border-radius: 14px;
   flex-shrink: 0;
   height: -moz-fit-content;
@@ -536,9 +536,11 @@ header {
 }
 .main-home .main-content {
   width: 100%;
+  max-width: 900px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 .main-home .main-content .rest {
   display: flex;
@@ -546,7 +548,7 @@ header {
   flex-direction: column;
 }
 .main-home .main-content h2 {
-  font-size: 52px;
+  font-size: 40px;
   font-weight: 700;
   color: #1F1F1F;
   text-align: center;
@@ -558,7 +560,7 @@ header {
 }
 .main-home .main-content .rest-cont {
   width: 100%;
-  max-width: 755px;
+  max-width: 650px;
   margin-bottom: 150px;
 }
 .main-home .main-content .counter-cont {
@@ -595,7 +597,7 @@ header {
   margin-bottom: 15px;
 }
 .main-home .main-content .counter-cont .contter .bordered-counter .counter p {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   color: #525252;
   margin-bottom: 0;
@@ -649,7 +651,7 @@ header {
      object-fit: contain;
 }
 .main-home .main-content .saying-hey p {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 0;
   background-color: var(--white-color);
@@ -689,7 +691,7 @@ header {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 90px;
+  row-gap: 75px;
   position: relative;
   padding-inline-end: 44px;
   margin-bottom: 20px;
@@ -714,7 +716,7 @@ header {
           clip-path: polygon(84% 0, 100% 50%, 84% 100%, 0% 100%, 16% 50%, 0% 0%);
 }
 .main-home .main-content .help-steps .trings-cont .tring h5 {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--white-color);
   margin-bottom: 0;
@@ -921,7 +923,7 @@ header {
   background-color: #f9f6ef;
   border-radius: 50px;
   width: 100%;
-  max-width: 960px;
+  max-width: 800px;
   position: relative;
   margin-bottom: 100px;
   z-index: 1;
@@ -958,7 +960,7 @@ header {
   z-index: 5;
 }
 .freq .heading h3 {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 0;
   color: #1F1F1F;
@@ -967,7 +969,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 16px;
+  padding: 10px 16px;
   background-color: var(--main-color);
   color: var(--white-color);
   border-radius: 50px;
@@ -1044,7 +1046,7 @@ header {
      object-fit: cover;
 }
 .freq-subs .sub h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: #1F1F1F;
   margin-bottom: 0;
@@ -1074,7 +1076,7 @@ header {
 .freq-subs .sub .grade span {
   padding: 7px 8px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -1096,7 +1098,7 @@ header {
   color: var(--white-color);
   position: relative;
   padding: 0 6px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   text-align: center;
   height: 44px;
@@ -1272,7 +1274,7 @@ header {
 
 .suggested-subjects {
   width: 100%;
-  max-width: 960px;
+  max-width: 800px;
   margin-bottom: 100px;
 }
 .suggested-subjects .heading {
@@ -1283,7 +1285,7 @@ header {
 }
 .suggested-subjects .heading h2 {
   margin-bottom: 0;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 700;
   color: #1F1F1F;
   margin-bottom: 0;
@@ -1311,13 +1313,13 @@ header {
 .suggested-subjects .sug-subs-cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 7px;
 }
 .suggested-subjects .sug-subs-cont .sug {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  padding: 30px 26px;
+  padding: 15px 15px;
   border-radius: 14px;
 }
 .suggested-subjects .sug-subs-cont .sug .garde {
@@ -1328,11 +1330,11 @@ header {
   margin-bottom: 20px;
 }
 .suggested-subjects .sug-subs-cont .sug .garde span {
-  padding: 3px 12px;
+  padding: 3px 6px;
   border-radius: 10px;
   border: 1px solid var(--white-color);
   color: var(--white-color);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 32px;
   text-wrap: nowrap;
