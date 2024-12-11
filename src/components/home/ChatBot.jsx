@@ -115,7 +115,7 @@ export default function ChatBot() {
                                 <i className="fa-solid fa-paper-plane"></i>
                                 <LazyLoadImage src={hager} alt="iTeacher" className='hagar' />
                             </label>
-                            <input type="submit" className='submit-btn-with-label' id="submit"></input>
+                            <input className='submit-btn-with-label' id="submit"></input>
                         </div>
                     </form>
                 </div>
