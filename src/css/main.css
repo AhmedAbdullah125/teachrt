@@ -2225,8 +2225,8 @@ textarea.form-input {
   color: #555;
 }
 .file-text-cont img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
