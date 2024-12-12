@@ -16,6 +16,7 @@ export default function ChatBot() {
     let [activRate, setActiveRate] = useState(0)
     let [text, setText] = useState('')
     let [isFile, setIsFile] = useState(false)
+    let [isRecord, setIsRecord] = useState(false)
     function handleRate(params) {
         console.log(params);
     }
@@ -34,133 +35,157 @@ export default function ChatBot() {
     let messageCopy = [...messages];
     console.log(activRate)
     function handleSend() {
-        if (isFile) {
+        if (isFile || isRecord || text != "") {
             setMessages([{
-                id: messages.length + 1, message:
-
-                    `<div className="file-text-cont">
-                        <img src=${isFile} alt='iTeacher'>
-                        <p>${text}</p>
-                    </div>
-                    `
-                , owner: 'me',
+                id: messages.length + 1, message: `
+                <p>${text}</p>
+                ${isRecord ? `<div className="player">
+                    <video src=${isRecord} controls   style={{ height: "54px"  }} className="md:w-56 w-44"/>
+                </div>`
+                        : ""
+                    }
+                ${isFile ? `<div className="file-text-cont">
+                    <img src=${isFile} alt='iTeacher'>
+                    <p>${text}</p>
+                </div>`: ""}
+                ` , owner: 'me',
             }, ...messageCopy])
+            setIsRecord(false)
             setText('')
             setIsFile(false)
         }
-        else {
-            if (text == '') {
-                document.querySelector('.text-area').style.border = '1px solid red';
-            }
-            else {
-                console.log(text);
-                setMessages([{ id: messages.length + 1, message: text, owner: 'me', }, ...messageCopy])
-                setText('')
-                // setMessages([ { id: messages.length + 1, message: 'hello', owner: 'chat', } , ...messageCopy])
-                // setInterval(() => {
-                // },3000)
-                // //stop time inter
-                // clearInterval(this.intervalID)
-            }
+        if (text == '') {
+            document.querySelector('.text-area').style.border = '1px solid red';
         }
-    }
-    const [file, setFile] = useState();
-    // function handleChange(e) {
-    //     console.log(e.target.files);
-    //     setFile(URL.createObjectURL(e.target.files[0]));
-    //     console.log(file);
+            // else {
+            //     if (isFile) {
+            //         setMessages([{
+            //             id: messages.length + 1, message:
 
-    //     setMessages([{ id: messages.length + 1, message: "<img src='" + e.target.files[0].name + "' alt='iTeacher'>", owner: 'me', }, ...messageCopy])
+            //                 `<div className="file-text-cont">
+            //                 <img src=${isFile} alt='iTeacher'>
+            //                 <p>${text}</p>
+            //             </div>
+            //             `
+            //             , owner: 'me',
+            //         }, ...messageCopy])
+            //         setText('')
+            //         setIsFile(false)
+            //     }
+            //     else {
+            //         if (text == '') {
+            //             document.querySelector('.text-area').style.border = '1px solid red';
+            //         }
+            //         else {
+            //             console.log(text);
+            //             setMessages([{ id: messages.length + 1, message: text, owner: 'me', }, ...messageCopy])
+            //             setText('')
+            //             // setMessages([ { id: messages.length + 1, message: 'hello', owner: 'chat', } , ...messageCopy])
+            //             // setInterval(() => {
+            //             // },3000)
+            //             // //stop time inter
+            //             // clearInterval(this.intervalID)
+            //         }
+            //     }
+            // }
+        }
+        const [file, setFile] = useState();
+        // function handleChange(e) {
+        //     console.log(e.target.files);
+        //     setFile(URL.createObjectURL(e.target.files[0]));
+        //     console.log(file);
 
-    // }
+        //     setMessages([{ id: messages.length + 1, message: "<img src='" + e.target.files[0].name + "' alt='iTeacher'>", owner: 'me', }, ...messageCopy])
 
-    return (
-        <div className="chat-main">
-            <div className="yell-cont">
-                <div className="sos-cont">
-                    <LazyLoadImage src={sos} alt="iTeacher" />
-                </div>
-                <div className="cls-cont">
-                    <LazyLoadImage src={cls} alt="iTeacher" />
-                </div>
-                <div className="white-cont">
-                    {/* <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
+        // }
+
+        return (
+            <div className="chat-main">
+                <div className="yell-cont">
+                    <div className="sos-cont">
+                        <LazyLoadImage src={sos} alt="iTeacher" />
+                    </div>
+                    <div className="cls-cont">
+                        <LazyLoadImage src={cls} alt="iTeacher" />
+                    </div>
+                    <div className="white-cont">
+                        {/* <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
                         <LazyLoadImage className={`${activRate == 1 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate1} alt="iTeacher" onClick={() => setActiveRate(1)}></LazyLoadImage>
                         <LazyLoadImage className={`${activRate == 2 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate2} alt="iTeacher" onClick={() => setActiveRate(2)}></LazyLoadImage>
                         <LazyLoadImage className={`${activRate == 3 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate3} alt="iTeacher" onClick={() => setActiveRate(3)}></LazyLoadImage>
                         <LazyLoadImage className={`${activRate == 4 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate4} alt="iTeacher" onClick={() => setActiveRate(4)}></LazyLoadImage>
                         <LazyLoadImage className={`${activRate == 5 ? "scale-125" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125`} src={rate5} alt="iTeacher" onClick={() => setActiveRate(5)}></LazyLoadImage>
                     </div> */}
-                    <div className="messages-cont">
-                        {
-                            messages.map((message) =>
-                                message.owner == 'me' ?
-                                    <div className="message-cont" key={message.id}>
-                                        <p className="message">{parse(message.message)}</p>
-                                    </div>
-                                    :
-                                    <div className="c">
-                                        <div className="chatpor-message-cont " key={message.id}>
-                                            <LazyLoadImage src={mLogo} alt="iTeacher" />
-                                            <div className="message">
-                                                {parse(message.message)}
+                        <div className="messages-cont">
+                            {
+                                messages.map((message) =>
+                                    message.owner == 'me' ?
+                                        <div className="message-cont" key={message.id}>
+                                            <p className="message">{parse(message.message)}</p>
+                                        </div>
+                                        :
+                                        <div className="c">
+                                            <div className="chatpor-message-cont " key={message.id}>
+                                                <LazyLoadImage src={mLogo} alt="iTeacher" />
+                                                <div className="message">
+                                                    {parse(message.message)}
 
-                                                {
-                                                    message.end ?
-                                                        <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
-                                                            <LazyLoadImage className={`${activRate == 1 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate1} alt="iTeacher" onClick={() => setActiveRate(1)}></LazyLoadImage>
-                                                            <LazyLoadImage className={`${activRate == 2 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate2} alt="iTeacher" onClick={() => setActiveRate(2)}></LazyLoadImage>
-                                                            <LazyLoadImage className={`${activRate == 3 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate3} alt="iTeacher" onClick={() => setActiveRate(3)}></LazyLoadImage>
-                                                            <LazyLoadImage className={`${activRate == 4 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate4} alt="iTeacher" onClick={() => setActiveRate(4)}></LazyLoadImage>
-                                                            <LazyLoadImage className={`${activRate == 5 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate5} alt="iTeacher" onClick={() => setActiveRate(5)}></LazyLoadImage>
-                                                        </div>
-                                                        : null
-                                                }
+                                                    {
+                                                        message.end ?
+                                                            <div class="flex items-center rounded-[80px] bg-[#F9F9F9] py-3 overflow-hidden border border-[#E6E6E6] w-max rates-imgs" onClick={() => console.log("activRate")}>
+                                                                <LazyLoadImage className={`${activRate == 1 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate1} alt="iTeacher" onClick={() => setActiveRate(1)}></LazyLoadImage>
+                                                                <LazyLoadImage className={`${activRate == 2 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate2} alt="iTeacher" onClick={() => setActiveRate(2)}></LazyLoadImage>
+                                                                <LazyLoadImage className={`${activRate == 3 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate3} alt="iTeacher" onClick={() => setActiveRate(3)}></LazyLoadImage>
+                                                                <LazyLoadImage className={`${activRate == 4 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate4} alt="iTeacher" onClick={() => setActiveRate(4)}></LazyLoadImage>
+                                                                <LazyLoadImage className={`${activRate == 5 ? "scale-125 rounded-[5px] bg-slate-500/25" : ""} w-12 h-12 px-3 border-e  border-[#E6E6E6] shrink-0 hover:scale-125 hover:bg-slate-500/10`} src={rate5} alt="iTeacher" onClick={() => setActiveRate(5)}></LazyLoadImage>
+                                                            </div>
+                                                            : null
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                            )
-                        }
-                    </div>
-                    <form action={handleSend}>
-
-                        <div className="abs-text-area">
-                            <textarea className="text-area" id='myFile' placeholder='Message to iteacher...' value={text} onChange={(e) => {
-                                setText(e.target.value);
-                                document.querySelector('.text-area').style.border = 'none';
-                            }}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                        handleSend()
-                                    }
-                                }}
-                            ></textarea>
-                        </div>
-                        <div className="btns-cont">
-                            {
-                                isFile ? 
-                                <div className="img-file-cont">
-                                    <LazyLoadImage src={isFile} alt="iTeacher" className='img-file' />
-                                </div>
-                                :null
+                                )
                             }
-                            <label htmlFor="file-upload" className="custom-file-upload">
-                            </label>
-                            <input id="file-upload" className='fileUploader' type="file" onChange={(e) => { setIsFile(e.target.files[0].name); console.log(file) }} />
-                            {/* <label htmlFor="file-upload" className="custom-file-upload2">
+                        </div>
+                        <form action={handleSend}>
+
+                            <div className="abs-text-area">
+                                <textarea className="text-area" id='myFile' placeholder='Message to iteacher...' value={text} onChange={(e) => {
+                                    setText(e.target.value);
+                                    document.querySelector('.text-area').style.border = 'none';
+                                }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            handleSend()
+                                        }
+                                    }}
+                                ></textarea>
+                            </div>
+                            <div className="btns-cont">
+                                {
+                                    isFile ?
+                                        <div className="img-file-cont">
+                                            <LazyLoadImage src={isFile} alt="iTeacher" className='img-file' />
+                                        </div>
+                                        : null
+                                }
+                                <label htmlFor="file-upload" className="custom-file-upload">
+                                </label>
+                                <input id="file-upload" className='fileUploader' type="file" onChange={(e) => { setIsFile(e.target.files[0].name); console.log(file) }} />
+                                {/* <label htmlFor="file-upload" className="custom-file-upload2">
                             </label>
                             <input id="file-upload" className='fileUploader' type="file" /> */}
-                            <Recorder />
-                            <label htmlFor='submit' className="send-btn-cont" onClick={handleSend}>
-                                <span className="send-btn">Send</span>
-                                <i className="fa-solid fa-paper-plane"></i>
-                                <LazyLoadImage src={hager} alt="iTeacher" className='hagar' />
-                            </label>
-                            <input className='submit-btn-with-label' id="submit"></input>
-                        </div>
-                    </form>
+                                <Recorder setIsRecord={setIsRecord} isRecord={isRecord} />
+                                <label htmlFor='submit' className="send-btn-cont" onClick={handleSend}>
+                                    <span className="send-btn">Send</span>
+                                    <i className="fa-solid fa-paper-plane"></i>
+                                    <LazyLoadImage src={hager} alt="iTeacher" className='hagar' />
+                                </label>
+                                <input className='submit-btn-with-label' id="submit"></input>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-}
+        );
+    }

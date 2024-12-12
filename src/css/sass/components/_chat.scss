@@ -193,6 +193,7 @@
             display: block;
             font-size: 14spx;
             font-weight: 400;
+            max-width: 100%;
         }
         .message:has(.file-text-cont){
             padding: 10px;
@@ -346,5 +347,18 @@
         position: absolute;
         bottom: -65px;
         width: 180px;
+    }
+}
+.message .player{
+    position: relative;
+    bottom: unset;
+    top: unset;
+    height: 50px;
+    width: 300px;
+        max-width: 100%;
+    video{
+        height: 100%;
+        width: 300px;
+        max-width: 100%;
     }
 }
