@@ -15,14 +15,14 @@ import Recorder from './Recorder';
 export default function ChatBot() {
     let [activRate, setActiveRate] = useState(0)
     let [text, setText] = useState('')
-    
+    let [isFile, setIsFile] = useState(false)
     function handleRate(params) {
         console.log(params);
     }
     let [messages, setMessages] = useState([
         { id: 10, message: 'اهلا يا سيدي', owner: 'chat', },
         { id: 9, message: 'hello', owner: 'me', },
-        { id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> `, owner: 'chat', owner: 'char', end: true,},
+        { id: 8, message: `Steps to Run This Program:<div className="bold">Steps to Run This Program:</div><ul><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ul><p>Here’s an enhanced version with error handling:</p> `, owner: 'chat', owner: 'char', end: true, },
         { id: 7, message: 'hello', owner: 'me', },
         { id: 6, message: 'Great! Let’s dive a bit deeper into adding and subtracting numbers programmatically. I will expand on how to take user input, perform multiple operations, and handle different data types.<div className=bold>Example: Python Program for Adding and Subtracting Numbers</div><div className="code"><div className="code-head"><span>Python</span><span><i className="fa-solid fa-copy"></i> Copy Code</span></div><div className="code-body"><pre className="comment"># Add and subtract two numbers </pre><pre><code>num1 = <span className="number">3</span><br/>num2 = <span className="number">5</span><br/><span className="comment"># Add and subtract two numbers</span><br/>sum_result = num1 + num2<br/>"result = num1 + num2<br/><span className="keyword">print</span>(<span className="variab">"Sum:"</span>, sum_result)<br/> <span className="comment"># Subtraction </span> <br/>sub_result = num1 - num2<br/>"result = num1 - num2<br/><span className="keyword">print</span>(<span className="variab">"Subtraction:"</span>, sub_result)</code></pre></div></div><div className="bold">Steps to Run This Program:</div><ol><li>Copy the code above.</li><li>Paste it into any Python IDE (like PyCharm, VS Code, or Jupyter Notebook) or an online compiler like Replit</li><li>Run the code.</li></ol><div className="bold">Output:</div><pre className="comment">Sum: 8<br/>Subtraction: -2</pre></div><ul><li>Valid Input: Catch errors if users enter invalid data.</li><li>Large Numbers: Handle very large values (Python supports arbitrarily large integers by default). Here’s an enhanced version with error handling:</li>', owner: 'chat', },
         { id: 5, message: 'yes', owner: 'me', },
@@ -34,21 +34,46 @@ export default function ChatBot() {
     let messageCopy = [...messages];
     console.log(activRate)
     function handleSend() {
-        if (text == '') {
-            document.querySelector('.text-area').style.border = '1px solid red';
-        }
-        else{
+        if (isFile) {
+            setMessages([{
+                id: messages.length + 1, message:
 
-            console.log(text);
-            setMessages([{ id: messages.length + 1, message: 'مساء الفل ', owner: 'chat', } ,{ id: messages.length + 1, message: text, owner: 'me', }, ...messageCopy])
+                    `<div className="file-text-cont">
+                        <img src=${isFile} alt='iTeacher'>
+                        <p>${text}</p>
+                    </div>
+                    `
+                , owner: 'me',
+            }, ...messageCopy])
             setText('')
-            // setMessages([ { id: messages.length + 1, message: 'hello', owner: 'chat', } , ...messageCopy])
-            // setInterval(() => {
-            // },3000)
-            // //stop time inter
-            // clearInterval(this.intervalID)
+            setIsFile(false)
+        }
+        else {
+            if (text == '') {
+                document.querySelector('.text-area').style.border = '1px solid red';
+            }
+            else {
+                console.log(text);
+                setMessages([{ id: messages.length + 1, message: text, owner: 'me', }, ...messageCopy])
+                setText('')
+                // setMessages([ { id: messages.length + 1, message: 'hello', owner: 'chat', } , ...messageCopy])
+                // setInterval(() => {
+                // },3000)
+                // //stop time inter
+                // clearInterval(this.intervalID)
+            }
         }
     }
+    const [file, setFile] = useState();
+    // function handleChange(e) {
+    //     console.log(e.target.files);
+    //     setFile(URL.createObjectURL(e.target.files[0]));
+    //     console.log(file);
+
+    //     setMessages([{ id: messages.length + 1, message: "<img src='" + e.target.files[0].name + "' alt='iTeacher'>", owner: 'me', }, ...messageCopy])
+
+    // }
+
     return (
         <div className="chat-main">
             <div className="yell-cont">
@@ -100,16 +125,32 @@ export default function ChatBot() {
                     <form action={handleSend}>
 
                         <div className="abs-text-area">
-                            <textarea className="text-area" placeholder='Message to iteacher...' value={text} onChange={(e) => {setText(e.target.value);document.querySelector('.text-area').style.border = 'none';}}></textarea>
+                            <textarea className="text-area" id='myFile' placeholder='Message to iteacher...' value={text} onChange={(e) => {
+                                setText(e.target.value);
+                                document.querySelector('.text-area').style.border = 'none';
+                            }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        handleSend()
+                                    }
+                                }}
+                            ></textarea>
                         </div>
                         <div className="btns-cont">
+                            {
+                                isFile ? 
+                                <div className="img-file-cont">
+                                    <LazyLoadImage src={isFile} alt="iTeacher" className='img-file' />
+                                </div>
+                                :null
+                            }
                             <label htmlFor="file-upload" className="custom-file-upload">
                             </label>
-                            <input id="file-upload" className='fileUploader' type="file" />
+                            <input id="file-upload" className='fileUploader' type="file" onChange={(e) => { setIsFile(e.target.files[0].name); console.log(file) }} />
                             {/* <label htmlFor="file-upload" className="custom-file-upload2">
                             </label>
                             <input id="file-upload" className='fileUploader' type="file" /> */}
-                            <Recorder/>
+                            <Recorder />
                             <label htmlFor='submit' className="send-btn-cont" onClick={handleSend}>
                                 <span className="send-btn">Send</span>
                                 <i className="fa-solid fa-paper-plane"></i>

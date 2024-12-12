@@ -4,7 +4,27 @@
     max-height: calc(100vh - 180px);
     margin: 0 auto;
 }
+.img-file-cont{
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
+.file-text-cont{
+    img{
+        width: 100px;
+        height: 100px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+}
 .yell-cont {
     background-color: #FEB22B;
     width: 100%;
@@ -164,6 +184,10 @@
             display: block;
             font-size: 14spx;
             font-weight: 400;
+        }
+        .message:has(.file-text-cont){
+            padding: 10px;
+            border-radius: 10px;
         }
     }
 
