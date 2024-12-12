@@ -14,15 +14,24 @@
         height: 100%;
         object-fit: cover;
     }
+   
 }
 
 .file-text-cont{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    p{
+        font-size: 14px;
+        color: #555;
+    }
     img{
         width: 100px;
         height: 100px;
         aspect-ratio: 1/1;
         object-fit: contain;
         border-radius: 10px;
+        background-color: $white;
     }
 }
 .yell-cont {

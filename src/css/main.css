@@ -2215,6 +2215,15 @@ textarea.form-input {
      object-fit: cover;
 }
 
+.file-text-cont {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.file-text-cont p {
+  font-size: 14px;
+  color: #555;
+}
 .file-text-cont img {
   width: 100px;
   height: 100px;
@@ -2222,6 +2231,7 @@ textarea.form-input {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 10px;
+  background-color: var(--white-color);
 }
 
 .yell-cont {
