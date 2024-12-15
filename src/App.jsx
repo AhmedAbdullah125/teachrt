@@ -10,6 +10,7 @@ import Login from './components/home/Login';
 import Mail from './components/home/Mail';
 import NewPass from './components/home/NewPass';
 import Layout from './components/Layout';
+// import Test from './components/test/Test';
 export const AppContext = createContext();
 function App() {
 	const routes = createBrowserRouter([{
@@ -20,6 +21,7 @@ function App() {
 			{ path: '/login', element: <Login></Login> },
 			{ path: '/mail', element: <Mail></Mail> },
 			{ path: '/newpass', element: <NewPass></NewPass> },
+			// { path: '/test', element: <Test></Test> },
 		]
 	}
 	])
