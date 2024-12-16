@@ -1,6 +1,7 @@
 import { useReactMediaRecorder } from "react-media-recorder";
 import React, { useEffect, useState } from "react";
-
+import AudioPlayer from "./AudioPlayer";
+// import AudioPlayer from "./AudioPlayer";
 const RecordView = (props) => {
   const [second, setSecond] = useState("00");
   const [minute, setMinute] = useState("00");
@@ -86,8 +87,10 @@ const RecordView = (props) => {
       <div style={isStoped && props.isRecord ? { display: "block" } : { display: "none" }} className="player">
         {" "}
         {/* <video src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" /> */}
-        <audio src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" />
+        {/* <audio src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" /> */}
+        <AudioPlayer mediaBlobUrl={mediaBlobUrl} />
       </div>
+      {/* <AudioPlayer /> */}
 
       <div
       // className="col-md-6 col-md-offset-3"
