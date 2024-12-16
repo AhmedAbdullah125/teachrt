@@ -10,7 +10,7 @@ const sound = {
   imageUrl: imgPlayer,
 };
 
-const AudioPlayer = () => {
+const AudioPlayer = ({mediaBlobUrl}) => {
   const [play, setPlay] = useState(false);
   const oceanRef = useRef(null);
   const MAX = 20;
@@ -35,12 +35,12 @@ const AudioPlayer = () => {
 
   return (
     <main className="flex flex-col items-center justify-center bg-background">
-      <div className="bg-accent flex h-fit max-w-fit flex-col rounded-lg border-2 border-cyan-700 pb-4 text-center shadow">
+      <div className="bg-accent flex h-fit max-w-fit flex-col rounded-lg border-2 border-cyan-700 text-center shadow">
         <div className="relative flex flex-col space-y-0">
           <img
             width={200}
             height={200}
-            className="mx-auto max-h-48 w-full flex-shrink-0 rounded-t-lg pb-2"
+            className="mx-auto max-h-20 w-20flex-shrink-0 rounded-t-lg pb-2"
             src={sound.imageUrl}
             alt="waves"
           />
@@ -55,9 +55,6 @@ const AudioPlayer = () => {
               <PauseIcon className="h-12 w-12" aria-hidden="true" />
             )}
           </button>
-          <dl className="mt-1 flex flex-col p-4">
-            <dd className="text-lg text-white">{sound.title}</dd>
-          </dl>
           <div className="mx-4 flex">
             <input
               type="range"
@@ -73,7 +70,7 @@ const AudioPlayer = () => {
           </div>
         </div>
       </div>
-      <audio ref={oceanRef} src={"/1.wav"} />
+      <audio ref={oceanRef} src={mediaBlobUrl} />
     </main>
   );
 };

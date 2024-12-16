@@ -14,6 +14,7 @@ import Recorder from './Recorder';
 // import { p } from 'framer-motion/client';
 // import { motion } from 'framer-motion';
 import AudioPlayer from './AudioPlayer';
+import AudioRecorder from './AudioRecorder';
 
 export default function ChatBot() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -237,7 +238,7 @@ export default function ChatBot() {
                     </form>
                 </div>
             </div>
-            <AudioPlayer />
+            
         </div>
     );
 }
