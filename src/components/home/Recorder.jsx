@@ -87,8 +87,8 @@ const RecordView = (props) => {
       <div style={isStoped && props.isRecord ? { display: "block" } : { display: "none" }} className="player">
         {" "}
         {/* <video src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" /> */}
-        {/* <audio src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" /> */}
-        <AudioPlayer mediaBlobUrl={mediaBlobUrl} />
+        <audio src={mediaBlobUrl} controls style={{ height: "54px" }} className="md:w-56 w-44" />
+        {/* <AudioPlayer mediaBlobUrl={mediaBlobUrl} /> */}
       </div>
       {/* <AudioPlayer /> */}
 

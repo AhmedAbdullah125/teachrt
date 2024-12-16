@@ -2,14 +2,15 @@ import React, { useRef, useState } from "react";
 import { SpeakerWaveIcon } from "@heroicons/react/24/outline";
 import { PlayIcon, PauseIcon } from "@heroicons/react/20/solid";
 import audo from "../../images/1.wav";
-import imgPlayer from "../../images/CalmOceanWaves.png";
+import imgPlayer from '../../images/CalmOceanWaves.png'
+
 const sound = {
   title: "Card Title",
   waveType: "1.wav",
   imageUrl: imgPlayer,
 };
 
-const AudioPlayer = ({mediaBlobUrl}) => {
+const AudioPlayer = () => {
   const [play, setPlay] = useState(false);
   const oceanRef = useRef(null);
   const MAX = 20;
@@ -33,7 +34,7 @@ const AudioPlayer = ({mediaBlobUrl}) => {
   }
 
   return (
-    <main className="flex  flex-col items-center justify-center bg-background">
+    <main className="flex flex-col items-center justify-center bg-background">
       <div className="bg-accent flex h-fit max-w-fit flex-col rounded-lg border-2 border-cyan-700 pb-4 text-center shadow">
         <div className="relative flex flex-col space-y-0">
           <img
@@ -72,7 +73,7 @@ const AudioPlayer = ({mediaBlobUrl}) => {
           </div>
         </div>
       </div>
-      <audio ref={oceanRef}  src={mediaBlobUrl} />
+      <audio ref={oceanRef} src={"/1.wav"} />
     </main>
   );
 };
